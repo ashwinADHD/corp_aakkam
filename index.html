@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Corp Aakkam — Under Construction</title>
+  <title>Aakkam Corp — Under Construction</title>
   <meta name="description" content="The website is currently under construction. Can we build it? Yes we can!">
   <meta name="theme-color" content="#0f172a">
 
@@ -301,85 +301,6 @@
       color: var(--text-muted);
     }
 
-    /* Notify / Subscription Mini Form */
-    .subscribe-box {
-      margin-top: 8px;
-      width: 100%;
-      max-width: 440px;
-    }
-
-    .notify-form {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      width: 100%;
-    }
-
-    .email-input {
-      width: 100%;
-      height: 48px;
-      padding: 0 16px;
-      background: rgba(30, 41, 59, 0.8);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 12px;
-      color: #ffffff;
-      font-size: 0.95rem;
-      font-family: inherit;
-      outline: none;
-      transition: all 0.2s ease;
-    }
-
-    .email-input:focus {
-      border-color: var(--yellow-primary);
-      box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.25);
-    }
-
-    .notify-btn {
-      height: 48px;
-      padding: 0 24px;
-      background: linear-gradient(135deg, var(--yellow-primary), var(--orange-safety));
-      border: none;
-      border-radius: 12px;
-      color: #0b1120;
-      font-family: 'Fredoka', cursive, sans-serif;
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      transition: all 0.2s ease;
-      box-shadow: 0 4px 16px rgba(245, 158, 11, 0.35);
-    }
-
-    .notify-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(245, 158, 11, 0.45);
-      filter: brightness(1.05);
-    }
-
-    .notify-btn:active {
-      transform: translateY(0);
-    }
-
-    /* Success message */
-    .success-alert {
-      display: none;
-      padding: 14px 18px;
-      background: rgba(34, 197, 94, 0.12);
-      border: 1px solid rgba(34, 197, 94, 0.35);
-      border-radius: 12px;
-      color: #4ade80;
-      font-size: 0.9rem;
-      font-weight: 600;
-      animation: fadeIn 0.3s ease;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(6px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
 
     /* Footer */
     .footer {
@@ -403,19 +324,6 @@
         align-items: flex-start;
         text-align: left;
       }
-
-      .notify-form {
-        flex-direction: row;
-      }
-
-      .email-input {
-        flex: 1;
-      }
-
-      .notify-btn {
-        width: auto;
-        white-space: nowrap;
-      }
     }
   </style>
 </head>
@@ -438,7 +346,7 @@
           <path d="M10.5 5.5H13.5V11H10.5V5.5Z" fill="#fbbf24"/>
         </svg>
       </div>
-      <span class="brand-text">Corp Aakkam</span>
+      <span class="brand-text">Aakkam Corp</span>
     </a>
 
     <div class="status-pill">
@@ -657,28 +565,8 @@
         </h1>
 
         <p class="sub-heading">
-          Bob and the crew are hard at work laying down the foundation for the new <strong>Corp Aakkam</strong> website. Check back soon for the grand reveal!
+          Bob and the crew are hard at work laying down the foundation for the new <strong>Aakkam Corp</strong> website. Check back soon for the grand reveal!
         </p>
-
-        <!-- Notification Form -->
-        <div class="subscribe-box">
-          <form id="notify-form" class="notify-form" novalidate>
-            <input 
-              type="email" 
-              id="email-input" 
-              class="email-input" 
-              placeholder="Enter your email for updates..." 
-              required
-            >
-            <button type="submit" class="notify-btn">
-              <span>Notify Me</span>
-              <span>&rarr;</span>
-            </button>
-          </form>
-          <div id="success-alert" class="success-alert">
-            ✓ Awesome! We'll notify you as soon as the site goes live!
-          </div>
-        </div>
       </div>
 
     </div>
@@ -686,37 +574,10 @@
 
   <!-- Footer -->
   <footer class="footer">
-    <p>&copy; 2025 Corp Aakkam. All rights reserved.</p>
+    <p>&copy; 2026 Aakkam Corp. All rights reserved.</p>
   </footer>
 
   <!-- Bottom Caution Stripe -->
   <div class="hazard-stripe" aria-hidden="true"></div>
-
-  <!-- Lightweight Script for Notification Feedback -->
-  <script>
-    (function () {
-      var form = document.getElementById('notify-form');
-      var emailInput = document.getElementById('email-input');
-      var alertBox = document.getElementById('success-alert');
-
-      if (form) {
-        form.addEventListener('submit', function (e) {
-          e.preventDefault();
-          var email = emailInput.value.trim();
-          if (email && email.indexOf('@') !== -1) {
-            form.style.display = 'none';
-            alertBox.style.display = 'block';
-          } else {
-            emailInput.focus();
-            emailInput.style.borderColor = '#ef4444';
-          }
-        });
-
-        emailInput.addEventListener('input', function () {
-          emailInput.style.borderColor = 'rgba(255, 255, 255, 0.12)';
-        });
-      }
-    })();
-  </script>
 </body>
 </html>
