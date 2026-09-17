@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <title>Corp Aakkam — Something New Is In The Works</title>
+  <meta name="description" content="Corp Aakkam is engineering the next generation of strategic capital investment and venture acceleration. Platform launching soon.">
+  <meta name="author" content="Corp Aakkam">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#070b14">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aakkam.corp/">
+  <meta property="og:title" content="Corp Aakkam — Something New Is In The Works">
+  <meta property="og:description" content="Institutional-grade capital investment and venture acceleration. Platform launching soon.">
+  <meta property="og:image" content="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='630' viewBox='0 0 1200 630'><rect width='100%' height='100%' fill='%23070b14'/><text x='50%' y='50%' font-size='64' font-family='sans-serif' font-weight='bold' fill='%2338bdf8' text-anchor='middle'>CORP AAKKAM</text></svg>">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Corp Aakkam — Something New Is In The Works">
+  <meta name="twitter:description" content="Institutional-grade capital investment and venture acceleration. Platform launching soon.">
+
+  <!-- Favicon: Scalable modern SVG data URI -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%2338bdf8'/%3E%3Cstop offset='100%25' stop-color='%2310b981'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%23070b14'/%3E%3Cpath d='M24 8L37 36H29.5L24 23.5L18.5 36H11L24 8Z' fill='url(%23g)'/%3E%3Ccircle cx='24' cy='31' r='2.5' fill='%2338bdf8'/%3E%3C/svg%3E">
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       CSS Reset & Custom Properties
+       ========================================================================== */
+    :root {
+      --bg-canvas: #070b14;
+      --bg-surface: rgba(15, 23, 42, 0.72);
+      --bg-surface-elevated: rgba(30, 41, 59, 0.65);
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-focus: rgba(56, 189, 248, 0.55);
+      
+      --accent-cyan: #38bdf8;
+      --accent-cyan-glow: rgba(56, 189, 248, 0.25);
+      --accent-emerald: #10b981;
+      --accent-emerald-glow: rgba(16, 185, 129, 0.25);
+      --accent-violet: #818cf8;
+      
+      --text-heading: #f8fafc;
+      --text-body: #94a3b8;
+      --text-muted: #64748b;
+      --text-highlight: #38bdf8;
+      
+      --font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 22px;
+      --radius-pill: 9999px;
+      
+      --transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+      --shadow-card: 0 20px 45px -12px rgba(0, 0, 0, 0.6), 0 0 0 1px var(--border-subtle);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      min-height: 100%;
+      height: auto;
+      background-color: var(--bg-canvas);
+      color: var(--text-body);
+      font-family: var(--font-family);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    /* ==========================================================================
+       Ambient Background Graphic
+       ========================================================================== */
+    .bg-grid-overlay {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background-image: 
+        radial-gradient(ellipse at 15% 15%, rgba(56, 189, 248, 0.12) 0%, transparent 45%),
+        radial-gradient(ellipse at 85% 75%, rgba(16, 185, 129, 0.09) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 100%, rgba(99, 102, 241, 0.08) 0%, transparent 60%),
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 100% 100%, 48px 48px, 48px 48px;
+    }
+
+    /* ==========================================================================
+       Layout Wrapper (Mobile-First)
+       ========================================================================== */
+    .page-wrapper {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 100vh;
+      min-height: 100dvh;
+      padding: max(20px, env(safe-area-inset-top)) 20px max(24px, env(safe-area-inset-bottom));
+      max-width: 1240px;
+      margin: 0 auto;
+    }
+
+    /* Header */
+    .site-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      padding-bottom: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .brand-logo-svg {
+      width: 42px;
+      height: 42px;
+      flex-shrink: 0;
+      border-radius: 10px;
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.15), rgba(16, 185, 129, 0.1));
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      padding: 6px;
+      transition: var(--transition);
+    }
+
+    .brand:hover .brand-logo-svg {
+      border-color: var(--accent-cyan);
+      box-shadow: 0 0 16px var(--accent-cyan-glow);
+      transform: translateY(-1px);
+    }
+
+    .brand-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-name {
+      font-size: 1.125rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: var(--text-heading);
+      text-transform: uppercase;
+    }
+
+    .brand-tagline {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    /* Live status badge */
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 6px 14px;
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      border-radius: var(--radius-pill);
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: #e2e8f0;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .pulse-indicator {
+      position: relative;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: var(--accent-emerald);
+    }
+
+    .pulse-indicator::after {
+      content: "";
+      position: absolute;
+      inset: -4px;
+      border-radius: 50%;
+      background-color: var(--accent-emerald);
+      opacity: 0.75;
+      animation: pulse-ring 2s cubic-bezier(0.24, 0, 0.38, 1) infinite;
+    }
+
+    @keyframes pulse-ring {
+      0% {
+        transform: scale(0.6);
+        opacity: 0.9;
+      }
+      80%, 100% {
+        transform: scale(2.4);
+        opacity: 0;
+      }
+    }
+
+    /* Main Grid Layout */
+    .main-content {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 36px;
+      align-items: center;
+      margin: 24px 0;
+      flex: 1;
+    }
+
+    /* Left Pane: Copy & Subscription */
+    .intro-section {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .headline-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent-cyan);
+      background: rgba(56, 189, 248, 0.08);
+      border: 1px solid rgba(56, 189, 248, 0.18);
+      padding: 4px 12px;
+      border-radius: var(--radius-pill);
+      align-self: flex-start;
+    }
+
+    .main-title {
+      font-size: clamp(2.2rem, 5.5vw, 3.75rem);
+      font-weight: 800;
+      line-height: 1.12;
+      letter-spacing: -0.03em;
+      color: var(--text-heading);
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #ffffff 30%, #93c5fd 75%, #38bdf8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
+    }
+
+    .lead-description {
+      font-size: clamp(1rem, 2vw, 1.125rem);
+      color: var(--text-body);
+      max-width: 540px;
+      line-height: 1.68;
+    }
+
+    /* Form Container */
+    .form-container {
+      margin-top: 10px;
+      max-width: 500px;
+    }
+
+    .notify-form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .input-group {
+      position: relative;
+      display: flex;
+      align-items: center;
+      width: 100%;
+    }
+
+    .input-icon {
+      position: absolute;
+      left: 16px;
+      width: 20px;
+      height: 20px;
+      color: var(--text-muted);
+      pointer-events: none;
+      transition: var(--transition);
+    }
+
+    .email-input {
+      width: 100%;
+      height: 52px;
+      padding: 0 16px 0 46px;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      color: var(--text-heading);
+      font-size: 0.95rem;
+      font-family: inherit;
+      outline: none;
+      transition: var(--transition);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .email-input::placeholder {
+      color: var(--text-muted);
+    }
+
+    .email-input:focus {
+      border-color: var(--accent-cyan);
+      box-shadow: 0 0 0 4px var(--accent-cyan-glow);
+      background: rgba(15, 23, 42, 0.98);
+    }
+
+    .input-group:focus-within .input-icon {
+      color: var(--accent-cyan);
+    }
+
+    .btn-submit {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      height: 52px;
+      padding: 0 28px;
+      background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
+      color: #031525;
+      font-family: inherit;
+      font-size: 0.95rem;
+      font-weight: 700;
+      border: none;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      box-shadow: 0 4px 18px rgba(56, 189, 248, 0.35);
+      transition: var(--transition);
+      white-space: nowrap;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(56, 189, 248, 0.45);
+      filter: brightness(1.06);
+    }
+
+    .btn-submit:active {
+      transform: translateY(0);
+    }
+
+    .btn-submit:focus-visible {
+      outline: 2px solid #ffffff;
+      outline-offset: 3px;
+    }
+
+    .btn-submit .btn-arrow {
+      transition: transform 0.2s ease;
+    }
+
+    .btn-submit:hover .btn-arrow {
+      transform: translateX(4px);
+    }
+
+    .form-message {
+      font-size: 0.84rem;
+      margin-top: 6px;
+      min-height: 20px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: var(--transition);
+    }
+
+    .form-message.error {
+      color: #f87171;
+    }
+
+    /* Success Card (shown after submission) */
+    .success-card {
+      display: none;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 20px;
+      background: rgba(16, 185, 129, 0.08);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      border-radius: var(--radius-md);
+      backdrop-filter: blur(12px);
+      animation: fadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .success-card.active {
+      display: flex;
+    }
+
+    .success-icon-box {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(16, 185, 129, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-emerald);
+      flex-shrink: 0;
+    }
+
+    .success-content {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .success-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #f1f5f9;
+    }
+
+    .success-text {
+      font-size: 0.84rem;
+      color: #cbd5e1;
+    }
+
+    .btn-reset-form {
+      margin-top: 8px;
+      background: none;
+      border: none;
+      color: var(--accent-cyan);
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: underline;
+      padding: 0;
+      align-self: flex-start;
+    }
+
+    /* Trust & Milestone Bar */
+    .trust-metrics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .metric-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .metric-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .metric-value {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text-heading);
+      margin-top: 2px;
+    }
+
+    /* Right Pane: Visual Card & Progress Tracker */
+    .visual-showcase {
+      width: 100%;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    .status-card {
+      position: relative;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: clamp(24px, 4vw, 36px);
+      box-shadow: var(--shadow-card);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    .status-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent 0%, var(--accent-cyan) 50%, transparent 100%);
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+
+    .card-subtitle {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .card-badge {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--accent-cyan);
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      border-radius: var(--radius-pill);
+      padding: 3px 10px;
+    }
+
+    /* Progress section */
+    .progress-box {
+      margin-bottom: 28px;
+    }
+
+    .progress-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 10px;
+    }
+
+    .progress-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-heading);
+    }
+
+    .progress-percent {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--accent-cyan);
+      letter-spacing: -0.02em;
+    }
+
+    .progress-track {
+      width: 100%;
+      height: 8px;
+      background: rgba(255, 255, 255, 0.07);
+      border-radius: var(--radius-pill);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .progress-fill {
+      width: 82%;
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent-cyan) 0%, var(--accent-emerald) 100%);
+      border-radius: var(--radius-pill);
+      position: relative;
+      animation: progressGrow 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .progress-fill::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 20px;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8));
+      filter: blur(2px);
+      animation: progressGlow 2s infinite ease-in-out;
+    }
+
+    @keyframes progressGrow {
+      from { width: 0%; }
+      to { width: 82%; }
+    }
+
+    @keyframes progressGlow {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 1; }
+    }
+
+    /* Milestone Steps */
+    .milestone-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      list-style: none;
+    }
+
+    .milestone-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 0.88rem;
+    }
+
+    .milestone-state-icon {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 0.75rem;
+    }
+
+    .milestone-item.done .milestone-state-icon {
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      color: var(--accent-emerald);
+    }
+
+    .milestone-item.done .milestone-name {
+      color: #cbd5e1;
+    }
+
+    .milestone-item.active .milestone-state-icon {
+      background: rgba(56, 189, 248, 0.15);
+      border: 1px solid var(--accent-cyan);
+      color: var(--accent-cyan);
+      box-shadow: 0 0 10px var(--accent-cyan-glow);
+    }
+
+    .milestone-item.active .milestone-name {
+      color: var(--text-heading);
+      font-weight: 600;
+    }
+
+    .milestone-item.pending .milestone-state-icon {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px dashed rgba(255, 255, 255, 0.2);
+      color: var(--text-muted);
+    }
+
+    .milestone-item.pending .milestone-name {
+      color: var(--text-muted);
+    }
+
+    .milestone-name {
+      flex: 1;
+    }
+
+    .milestone-badge {
+      font-size: 0.72rem;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+
+    .milestone-item.done .milestone-badge {
+      color: var(--accent-emerald);
+      background: rgba(16, 185, 129, 0.1);
+    }
+
+    .milestone-item.active .milestone-badge {
+      color: var(--accent-cyan);
+      background: rgba(56, 189, 248, 0.1);
+    }
+
+    .milestone-item.pending .milestone-badge {
+      color: var(--text-muted);
+    }
+
+    /* Ambient Sphere Graphic in Status Card */
+    .card-ambient-orb {
+      position: absolute;
+      bottom: -60px;
+      right: -60px;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.18) 0%, transparent 70%);
+      filter: blur(20px);
+      pointer-events: none;
+    }
+
+    /* Footer */
+    .site-footer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border-subtle);
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .social-links {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .social-icon-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-body);
+      transition: var(--transition);
+      text-decoration: none;
+    }
+
+    .social-icon-link:hover {
+      color: #ffffff;
+      background: rgba(56, 189, 248, 0.12);
+      border-color: var(--accent-cyan);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px var(--accent-cyan-glow);
+    }
+
+    .social-icon-link svg {
+      width: 17px;
+      height: 17px;
+    }
+
+    .social-icon-link:focus-visible {
+      outline: 2px solid var(--accent-cyan);
+      outline-offset: 2px;
+    }
+
+    .footer-meta {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      text-align: center;
+    }
+
+    .footer-privacy {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    /* Helper utility for screen readers */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Spinner Animation */
+    .spinner {
+      width: 16px;
+      height: 16px;
+      border: 2px solid rgba(0, 0, 0, 0.2);
+      border-top-color: #031525;
+      border-radius: 50%;
+      animation: spin 0.6s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* ==========================================================================
+       Responsive Breakpoints
+       ========================================================================== */
+    /* Tablet & Small Desktop (768px+) */
+    @media (min-width: 768px) {
+      .page-wrapper {
+        padding: 32px 40px 32px;
+      }
+
+      .site-header {
+        padding-bottom: 32px;
+      }
+
+      .notify-form {
+        flex-direction: row;
+      }
+
+      .input-group {
+        flex: 1;
+      }
+
+      .btn-submit {
+        width: auto;
+      }
+
+      .site-footer {
+        flex-direction: row;
+      }
+
+      .footer-meta {
+        align-items: flex-end;
+        text-align: right;
+      }
+    }
+
+    /* Desktop (1024px+) */
+    @media (min-width: 1024px) {
+      .page-wrapper {
+        padding: 36px 48px 36px;
+        height: 100vh;
+        max-height: 960px;
+      }
+
+      .main-content {
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 60px;
+        margin: 0;
+      }
+
+      .intro-section {
+        padding-right: 20px;
+      }
+
+      .visual-showcase {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Ambient glowing background grid -->
+  <div class="bg-grid-overlay" aria-hidden="true"></div>
+
+  <div class="page-wrapper">
+    <!-- Header: Brand Logo & Live Status -->
+    <header class="site-header" role="banner">
+      <a href="#" class="brand" aria-label="Corp Aakkam Home">
+        <!-- SVG Monogram / Emblem -->
+        <svg class="brand-logo-svg" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M18 4L30 29H23L18 17.5L13 29H6L18 4Z" fill="url(#brand-grad)" />
+          <circle cx="18" cy="24" r="2.2" fill="#38bdf8" />
+          <defs>
+            <linearGradient id="brand-grad" x1="6" y1="4" x2="30" y2="29" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#38bdf8"/>
+              <stop offset="1" stop-color="#10b981"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <div class="brand-info">
+          <span class="brand-name">Corp Aakkam</span>
+          <span class="brand-tagline">Capital &amp; Ventures</span>
+        </div>
+      </a>
+
+      <div class="status-badge" role="status">
+        <span class="pulse-indicator" aria-hidden="true"></span>
+        <span>Platform in Development &bull; Launching Soon</span>
+      </div>
+    </header>
+
+    <!-- Main Content Grid -->
+    <main class="main-content" role="main">
+      <!-- Left Column: Copy & Notification Form -->
+      <section class="intro-section" aria-labelledby="hero-title">
+        <div class="headline-pill">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+          </svg>
+          Strategic Capital &amp; Incubation
+        </div>
+
+        <h1 id="hero-title" class="main-title">
+          Something New Is <br>
+          <span class="gradient-text">In The Works.</span>
+        </h1>
+
+        <p class="lead-description">
+          We are assembling an institutional-grade investment platform designed for bold ventures and transformative growth. Private market intelligence, syndicated rounds, and disciplined capital allocation.
+        </p>
+
+        <!-- Subscription Form Component -->
+        <div class="form-container">
+          <form id="notify-form" class="notify-form" novalidate>
+            <div class="input-group">
+              <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+              </svg>
+              <label for="email-input" class="sr-only">Work or personal email address</label>
+              <input 
+                type="email" 
+                id="email-input" 
+                class="email-input" 
+                placeholder="Enter your email for early access..." 
+                required 
+                autocomplete="email"
+                aria-describedby="form-status-msg"
+              >
+            </div>
+            <button type="submit" id="submit-btn" class="btn-submit">
+              <span id="btn-text">Notify Me</span>
+              <svg id="btn-arrow" class="btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+          </form>
+
+          <!-- Accessible Form Error / Helper Message -->
+          <div id="form-status-msg" class="form-message" role="alert" aria-live="polite"></div>
+
+          <!-- Success State Card -->
+          <div id="success-card" class="success-card" role="status" aria-live="polite">
+            <div class="success-icon-box" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <div class="success-content">
+              <div class="success-title">You're on the priority waitlist!</div>
+              <div class="success-text">Thank you. We'll send an exclusive invite directly to your inbox before public launch.</div>
+              <button type="button" id="reset-btn" class="btn-reset-form">Register another email &rarr;</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Trust Signals / Key Information -->
+        <div class="trust-metrics">
+          <div class="metric-item">
+            <span class="metric-label">Target Launch</span>
+            <span class="metric-value">Q4 2025</span>
+          </div>
+          <div class="metric-item">
+            <span class="metric-label">Access Tier</span>
+            <span class="metric-value">Accredited &amp; Institutional</span>
+          </div>
+          <div class="metric-item">
+            <span class="metric-label">Global Inquiries</span>
+            <span class="metric-value">contact@aakkam.corp</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Right Column: Visual Progress Element -->
+      <section class="visual-showcase" aria-label="Deployment Status and Milestones">
+        <div class="status-card">
+          <div class="card-ambient-orb" aria-hidden="true"></div>
+
+          <div class="card-top">
+            <span class="card-subtitle">Deployment Tracker</span>
+            <span class="card-badge">Private Alpha</span>
+          </div>
+
+          <div class="progress-box">
+            <div class="progress-header">
+              <span class="progress-title">Build Progress</span>
+              <span class="progress-percent">82%</span>
+            </div>
+            <div class="progress-track" role="progressbar" aria-valuenow="82" aria-valuemin="0" aria-valuemax="100" aria-label="Development progress 82%">
+              <div class="progress-fill"></div>
+            </div>
+          </div>
+
+          <!-- Roadmap Milestones -->
+          <ul class="milestone-list">
+            <li class="milestone-item done">
+              <span class="milestone-state-icon" aria-label="Completed">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </span>
+              <span class="milestone-name">Core Investment Architecture</span>
+              <span class="milestone-badge">Complete</span>
+            </li>
+
+            <li class="milestone-item done">
+              <span class="milestone-state-icon" aria-label="Completed">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </span>
+              <span class="milestone-name">Capital Syndication Pipeline</span>
+              <span class="milestone-badge">Complete</span>
+            </li>
+
+            <li class="milestone-item active">
+              <span class="milestone-state-icon" aria-label="In Progress">
+                <span class="pulse-indicator" style="width: 6px; height: 6px; background-color: var(--accent-cyan);"></span>
+              </span>
+              <span class="milestone-name">Investor Portal &amp; Dealroom</span>
+              <span class="milestone-badge">In Progress</span>
+            </li>
+
+            <li class="milestone-item pending">
+              <span class="milestone-state-icon" aria-label="Upcoming">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                </svg>
+              </span>
+              <span class="milestone-name">Public Beta &amp; Partner Launch</span>
+              <span class="milestone-badge">Pending</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer: Social Links & Copyright -->
+    <footer class="site-footer" role="contentinfo">
+      <div class="social-links">
+        <!-- X / Twitter -->
+        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="Follow Corp Aakkam on X (Twitter)">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+          </svg>
+        </a>
+
+        <!-- LinkedIn -->
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="Follow Corp Aakkam on LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.6 1.6 0 1 0 0-3.2 1.6 1.6 0 0 0 0 3.2m1.4 9.74V10.13H5.06v8.37h2.8z"/>
+          </svg>
+        </a>
+
+        <!-- GitHub -->
+        <a href="https://github.com/ashwinADHD/corp_aakkam" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="View Corp Aakkam on GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+          </svg>
+        </a>
+
+        <!-- Instagram -->
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="Follow Corp Aakkam on Instagram">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+        </a>
+      </div>
+
+      <div class="footer-meta">
+        <p>&copy; 2025 Corp Aakkam. All rights reserved.</p>
+        <p class="footer-privacy">We respect your privacy. No unsolicited outreach, ever.</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Vanilla JavaScript for Form Handling -->
+  <script>
+    (function () {
+      'use strict';
+
+      var form = document.getElementById('notify-form');
+      var emailInput = document.getElementById('email-input');
+      var submitBtn = document.getElementById('submit-btn');
+      var btnText = document.getElementById('btn-text');
+      var btnArrow = document.getElementById('btn-arrow');
+      var statusMsg = document.getElementById('form-status-msg');
+      var successCard = document.getElementById('success-card');
+      var resetBtn = document.getElementById('reset-btn');
+
+      // Email validation regex (RFC 5322 subset)
+      var EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$/;
+
+      // Check if user already subscribed in this browser session
+      var savedSubscribers = [];
+      try {
+        var stored = localStorage.getItem('corp_aakkam_subscribers');
+        if (stored) {
+          savedSubscribers = JSON.parse(stored);
+        }
+      } catch (e) {
+        // LocalStorage disabled or blocked
+      }
+
+      function showError(message) {
+        statusMsg.textContent = message;
+        statusMsg.className = 'form-message error';
+        emailInput.focus();
+      }
+
+      function clearError() {
+        statusMsg.textContent = '';
+        statusMsg.className = 'form-message';
+      }
+
+      function setLoading(isLoading) {
+        if (isLoading) {
+          submitBtn.disabled = true;
+          emailInput.disabled = true;
+          btnText.textContent = 'Submitting...';
+          btnArrow.style.display = 'none';
+          
+          var spinner = document.createElement('span');
+          spinner.className = 'spinner';
+          spinner.id = 'btn-spinner';
+          submitBtn.appendChild(spinner);
+        } else {
+          submitBtn.disabled = false;
+          emailInput.disabled = false;
+          btnText.textContent = 'Notify Me';
+          btnArrow.style.display = 'inline';
+          var existingSpinner = document.getElementById('btn-spinner');
+          if (existingSpinner) {
+            existingSpinner.remove();
+          }
+        }
+      }
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        clearError();
+
+        var email = emailInput.value.trim();
+
+        // Validation
+        if (!email) {
+          showError('Please enter your email address.');
+          return;
+        }
+
+        if (!EMAIL_REGEX.test(email)) {
+          showError('Please enter a valid email address (e.g. name@domain.com).');
+          return;
+        }
+
+        // Trigger loading state
+        setLoading(true);
+
+        // Simulate async submission (e.g. Cloudflare Worker or API endpoint)
+        setTimeout(function () {
+          try {
+            if (!savedSubscribers.includes(email)) {
+              savedSubscribers.push(email);
+              localStorage.setItem('corp_aakkam_subscribers', JSON.stringify(savedSubscribers));
+            }
+          } catch (err) {
+            // Ignore localStorage exceptions
+          }
+
+          setLoading(false);
+
+          // Transition to success card
+          form.style.display = 'none';
+          statusMsg.style.display = 'none';
+          successCard.classList.add('active');
+        }, 650);
+      });
+
+      // Clear error on input typing
+      emailInput.addEventListener('input', function () {
+        if (statusMsg.textContent) {
+          clearError();
+        }
+      });
+
+      // Reset to form
+      resetBtn.addEventListener('click', function () {
+        successCard.classList.remove('active');
+        form.style.display = 'flex';
+        statusMsg.style.display = 'flex';
+        emailInput.value = '';
+        clearError();
+        emailInput.focus();
+      });
+    })();
+  </script>
+</body>
+</html>
