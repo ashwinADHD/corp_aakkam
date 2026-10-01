@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Sidebar from '../components/Sidebar.astro';
+import Icons from '../components/Icons.astro';
 ---
 
 <Layout
@@ -8,24 +9,25 @@ import Sidebar from '../components/Sidebar.astro';
   description="Strategic corporate direct and indirect tax planning, transaction tax structuring, transfer pricing, and statutory revenue representation by Aakkam Corporate Solutions."
 >
 
-  <div class="bg-gradient-to-r from-slate-950 via-slate-900 to-blue-950 text-white py-10 sm:py-14 px-4 sm:px-6 lg:px-8 border-b border-slate-800">
+  <!-- Clean Light Header with Krasis Orange Accents -->
+  <section class="bg-gradient-to-b from-orange-50/60 via-white to-slate-50 border-b border-slate-200/80 py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
     <div class="max-w-7xl mx-auto">
-      <span class="inline-block bg-red-600 text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-3">
+      <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase bg-orange-100/80 text-brand-orange border border-orange-200 mb-4">
         Fiscal Optimization
       </span>
-      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-tight">
         Corporate Tax Planning
       </h1>
-      <p class="text-slate-300 max-w-2xl mt-3 text-base sm:text-lg">
+      <p class="text-slate-600 max-w-2xl mt-4 text-base sm:text-lg leading-relaxed">
         Maximizing tax efficiency, structuring corporate transactions, and ensuring statutory compliance.
       </p>
     </div>
-  </div>
+  </section>
 
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
       
-      <main class="lg:col-span-8 bg-white p-5 sm:p-10 rounded-2xl border border-slate-200/90 shadow-sm space-y-6">
+      <main class="lg:col-span-8 bg-white p-6 sm:p-10 rounded-2xl border border-slate-200/90 shadow-sm space-y-6">
         <h2 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight pb-3 border-b border-slate-100">
           Corporate Tax Planning & Advisory
         </h2>
@@ -41,28 +43,40 @@ import Sidebar from '../components/Sidebar.astro';
         <h3 class="text-xl font-bold text-slate-900 pt-2">Our Core Tax Planning Solutions</h3>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-2">
-          <div class="p-5 rounded-xl bg-slate-50 border border-slate-200">
+          <div class="p-6 rounded-2xl bg-orange-50/40 border border-orange-100">
+            <div class="w-10 h-10 rounded-xl bg-orange-100 text-brand-orange flex items-center justify-center mb-3">
+              <Icons name="tax" class="w-5 h-5" />
+            </div>
             <h4 class="font-bold text-slate-900 text-sm mb-1">Transaction Tax Structuring</h4>
             <p class="text-xs text-slate-600 leading-relaxed">
               Optimizing tax exposure during mergers, acquisitions, hive-offs, slump sales, demergers, and capital reorganizations.
             </p>
           </div>
 
-          <div class="p-5 rounded-xl bg-slate-50 border border-slate-200">
+          <div class="p-6 rounded-2xl bg-orange-50/40 border border-orange-100">
+            <div class="w-10 h-10 rounded-xl bg-orange-100 text-brand-orange flex items-center justify-center mb-3">
+              <Icons name="diligence" class="w-5 h-5" />
+            </div>
             <h4 class="font-bold text-slate-900 text-sm mb-1">Corporate Direct Tax Planning</h4>
             <p class="text-xs text-slate-600 leading-relaxed">
               Maximizing allowable exemptions, capital allowances, depreciation optimization, and R&D incentives under prevailing tax codes.
             </p>
           </div>
 
-          <div class="p-5 rounded-xl bg-slate-50 border border-slate-200">
+          <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200">
+            <div class="w-10 h-10 rounded-xl bg-white text-slate-800 flex items-center justify-center mb-3 border border-slate-200">
+              <Icons name="shield" class="w-5 h-5" />
+            </div>
             <h4 class="font-bold text-slate-900 text-sm mb-1">Indirect Taxation & GST Advisory</h4>
             <p class="text-xs text-slate-600 leading-relaxed">
               Structuring supply chains, input tax credit (ITC) optimization, customs classifications, and GST compliance reviews.
             </p>
           </div>
 
-          <div class="p-5 rounded-xl bg-slate-50 border border-slate-200">
+          <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200">
+            <div class="w-10 h-10 rounded-xl bg-white text-slate-800 flex items-center justify-center mb-3 border border-slate-200">
+              <Icons name="project" class="w-5 h-5" />
+            </div>
             <h4 class="font-bold text-slate-900 text-sm mb-1">Transfer Pricing & Cross-Border Tax</h4>
             <p class="text-xs text-slate-600 leading-relaxed">
               Benchmarking arm's-length international transactions, Double Taxation Avoidance Agreements (DTAA), and master file documentation.
@@ -70,12 +84,22 @@ import Sidebar from '../components/Sidebar.astro';
           </div>
         </div>
 
-        <div class="pt-6">
+        <div class="pt-6 border-t border-slate-100 flex flex-wrap gap-4 items-center">
           <a
             href="/contact"
-            class="w-full sm:w-auto inline-flex justify-center items-center px-6 py-3.5 rounded-xl text-sm font-bold text-white bg-red-600 hover:bg-red-700 shadow-sm transition-all"
+            class="inline-flex justify-center items-center gap-2 px-6 py-3.5 rounded-xl text-sm font-bold text-white bg-brand-orange hover:bg-brand-orangeHover shadow-md shadow-orange-500/20 active:scale-[0.98] transition-all"
           >
-            Schedule Tax Planning Advisory →
+            <span>Schedule Tax Planning Advisory</span>
+            <Icons name="chevron-right" class="w-4 h-4" />
+          </a>
+          <a
+            href="https://wa.me/917010311971?text=Hello%20Aakkam%2C%20I%20would%20like%20to%20discuss%20corporate%20tax%20planning."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex justify-center items-center gap-2 px-5 py-3.5 rounded-xl text-sm font-bold text-emerald-700 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 active:scale-[0.98] transition-all"
+          >
+            <Icons name="whatsapp" class="w-4 h-4 text-emerald-600" />
+            <span>Chat on WhatsApp</span>
           </a>
         </div>
       </main>

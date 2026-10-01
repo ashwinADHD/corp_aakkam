@@ -1,56 +1,56 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Sidebar from '../components/Sidebar.astro';
-import ContactForm from '../components/ContactForm.astro';
+import Icons from '../components/Icons.astro';
 
 const services = [
   {
     title: 'Fund Raising Solutions',
     desc: 'Access institutional private capital, term loans, equity private placements, hybrid FCCBs, and future receivables securitization.',
     href: '/resource',
-    icon: '💰',
+    icon: 'fund-raising',
   },
   {
     title: 'Sick Industries Revival',
     desc: 'Strategic One Time Settlement (OTS) negotiations, BIFR/IBC relief packages, debt conversion, and operational business restructuring.',
     href: '/sick',
-    icon: '🔄',
+    icon: 'revival',
   },
   {
     title: 'Project Preparation & Appraisal',
     desc: 'Comprehensive feasibility studies, discounted cash flow valuation, NPV optimization, and Detailed Project Reports (DPR).',
     href: '/project',
-    icon: '📋',
+    icon: 'project',
   },
   {
     title: 'Due Diligence',
     desc: 'Rigorous forensic business and legal due diligence verifying commercial realities, patent integrity, and contingent liabilities.',
     href: '/due',
-    icon: '🔍',
+    icon: 'diligence',
   },
   {
     title: 'M & A Advisory Solutions',
     desc: 'Corporate takeover strategies, target company valuation, tax-efficient structuring, fair opinions, and deal consummation.',
     href: '/advisory',
-    icon: '🤝',
+    icon: 'advisory',
   },
   {
     title: 'IPO Advisory Services',
     desc: 'Public market readiness audits, merchant banker selection, DRHP/MD&A drafting, and post-listing investor relations.',
     href: '/ipo',
-    icon: '🔔',
+    icon: 'ipo',
   },
   {
     title: 'Venture Capital Funding',
     desc: 'Early to growth-stage capital mobilization, financial modeling, valuation benchmarking, and VC term sheet negotiations.',
     href: '/venture',
-    icon: '🚀',
+    icon: 'venture',
   },
   {
     title: 'Corporate Tax Planning',
     desc: 'Direct and indirect tax structuring for M&A, cross-border transfer pricing, and statutory dispute resolution.',
     href: '/tax',
-    icon: '📑',
+    icon: 'tax',
   },
 ];
 ---
@@ -60,34 +60,43 @@ const services = [
   description="Premier financial consulting and corporate advisory firm in Chennai, India. Specializing in capital fund raising, M&A, IPO advisory, and sick unit debt restructuring."
 >
 
-  <!-- Hero Section: Fluid Responsive on Mobile & PC Screens -->
-  <section class="relative bg-gradient-to-br from-slate-950 via-slate-900 to-blue-950 text-white overflow-hidden py-12 sm:py-20 lg:py-28 px-4 sm:px-6 lg:px-8 border-b border-slate-800">
-    <div class="absolute inset-0 opacity-15 bg-cover bg-center pointer-events-none" style="background-image: url('/style/banner_2.png');"></div>
+  <!-- Hero Section: Krasis Tech Light-Themed Visual Architecture -->
+  <section class="relative bg-gradient-to-b from-orange-50/70 via-white to-slate-50 text-slate-900 overflow-hidden py-14 sm:py-24 lg:py-28 px-4 sm:px-6 lg:px-8 border-b border-slate-200/80">
+    <div class="absolute inset-0 bg-[radial-gradient(#ea580c_1px,transparent_1px)] [background-size:24px_24px] opacity-10 pointer-events-none"></div>
+    
     <div class="relative max-w-7xl mx-auto">
       <div class="max-w-3xl">
-        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[0.7rem] sm:text-xs font-bold tracking-wide uppercase bg-red-600/90 text-white mb-4 sm:mb-6">
-          <span>🛡️</span> Institutional Corporate Finance Desk
-        </span>
-        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-tight">
-          Strategic Capital Mobilization & Corporate Restructuring
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 leading-[1.12]">
+          Strategic Capital Mobilization & <span class="text-brand-orange">Corporate Restructuring</span>
         </h1>
-        <p class="mt-4 sm:mt-6 text-sm sm:text-lg lg:text-xl text-slate-300 leading-relaxed">
-          Maximizing enterprise value through innovative, transparent, and need-based financial solutions. Partnering with institutional investors, banks, and corporate boards across India.
+        <p class="mt-5 sm:mt-7 text-base sm:text-lg lg:text-xl text-slate-600 leading-relaxed font-normal">
+          Maximizing enterprise value through innovative, transparent, and need-based financial solutions. Partnering with institutional investors, commercial lenders, and corporate boards across India.
         </p>
 
         <!-- CTA Action Buttons (Full width on phones, inline on PC) -->
-        <div class="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4 items-stretch sm:items-center">
-          <a
-            href="/contact"
-            class="inline-flex justify-center items-center px-6 sm:px-7 py-3.5 sm:py-4 rounded-xl text-sm sm:text-base font-bold text-white bg-red-600 hover:bg-red-700 active:scale-[0.98] shadow-lg shadow-red-600/30 transition-all text-center"
-          >
-            Initiate Advisory Consultation →
-          </a>
+        <div class="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-3.5 sm:gap-4 items-stretch sm:items-center">
           <a
             href="/services"
-            class="inline-flex justify-center items-center px-6 sm:px-7 py-3.5 sm:py-4 rounded-xl text-sm sm:text-base font-bold text-white bg-white/10 hover:bg-white/15 backdrop-blur-sm border border-white/20 transition-all text-center"
+            class="inline-flex justify-center items-center gap-2 px-7 py-4 rounded-xl text-sm sm:text-base font-bold text-white bg-brand-orange hover:bg-brand-orangeHover active:scale-[0.98] shadow-lg shadow-orange-500/25 transition-all text-center"
           >
-            Explore Core Practices
+            <span>Explore Core Practices</span>
+            <Icons name="chevron-right" class="w-4 h-4" />
+          </a>
+          <a
+            href="https://wa.me/917010311971?text=Hello%20Aakkam%20Corporate%20Solutions%2C%20I%20would%20like%20to%20connect%20regarding%20corporate%20advisory%20services."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex justify-center items-center gap-2 px-6 py-4 rounded-xl text-sm sm:text-base font-bold text-emerald-700 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 active:scale-[0.98] transition-all text-center"
+          >
+            <Icons name="whatsapp" class="w-5 h-5 text-emerald-600" />
+            <span>Chat on WhatsApp</span>
+          </a>
+          <a
+            href="tel:+917010311971"
+            class="inline-flex justify-center items-center gap-2 px-6 py-4 rounded-xl text-sm sm:text-base font-bold text-slate-700 bg-white hover:bg-slate-50 border border-slate-200 active:scale-[0.98] transition-all text-center shadow-xs"
+          >
+            <Icons name="phone" class="w-4 h-4 text-brand-orange" />
+            <span>Call +91 70103 11971</span>
           </a>
         </div>
       </div>
@@ -95,23 +104,23 @@ const services = [
   </section>
 
   <!-- Trust Badges & Metrics Bar -->
-  <section class="bg-white border-b border-slate-200/80 py-6 sm:py-8 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6 text-center">
-      <div class="p-3 sm:p-4 rounded-xl bg-slate-50 border border-slate-100">
-        <div class="text-xl sm:text-3xl font-black text-slate-900">8+</div>
-        <div class="text-[0.65rem] sm:text-xs text-slate-500 font-semibold uppercase tracking-wider mt-1">Specialized Practices</div>
+  <section class="bg-white border-b border-slate-200/80 py-8 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-3.5 sm:gap-6 text-center">
+      <div class="p-4 sm:p-5 rounded-2xl bg-orange-50/40 border border-orange-100/80">
+        <div class="text-2xl sm:text-4xl font-black text-brand-orange">8+</div>
+        <div class="text-[0.65rem] sm:text-xs text-slate-600 font-bold uppercase tracking-wider mt-1.5">Specialized Practices</div>
       </div>
-      <div class="p-3 sm:p-4 rounded-xl bg-slate-50 border border-slate-100">
-        <div class="text-xl sm:text-3xl font-black text-red-600">100%</div>
-        <div class="text-[0.65rem] sm:text-xs text-slate-500 font-semibold uppercase tracking-wider mt-1">Confidential & Compliant</div>
+      <div class="p-4 sm:p-5 rounded-2xl bg-orange-50/40 border border-orange-100/80">
+        <div class="text-2xl sm:text-4xl font-black text-brand-orange">100%</div>
+        <div class="text-[0.65rem] sm:text-xs text-slate-600 font-bold uppercase tracking-wider mt-1.5">Strict Confidentiality</div>
       </div>
-      <div class="p-3 sm:p-4 rounded-xl bg-slate-50 border border-slate-100">
-        <div class="text-xl sm:text-3xl font-black text-blue-600">End-to-End</div>
-        <div class="text-[0.65rem] sm:text-xs text-slate-500 font-semibold uppercase tracking-wider mt-1">Transaction Execution</div>
+      <div class="p-4 sm:p-5 rounded-2xl bg-slate-50 border border-slate-200/70">
+        <div class="text-2xl sm:text-4xl font-black text-slate-900">End-to-End</div>
+        <div class="text-[0.65rem] sm:text-xs text-slate-600 font-bold uppercase tracking-wider mt-1.5">Transaction Execution</div>
       </div>
-      <div class="p-3 sm:p-4 rounded-xl bg-slate-50 border border-slate-100">
-        <div class="text-xl sm:text-3xl font-black text-slate-900">Chennai, IN</div>
-        <div class="text-[0.65rem] sm:text-xs text-slate-500 font-semibold uppercase tracking-wider mt-1">Headquartered Desk</div>
+      <div class="p-4 sm:p-5 rounded-2xl bg-slate-50 border border-slate-200/70">
+        <div class="text-2xl sm:text-4xl font-black text-slate-900">Chennai, IN</div>
+        <div class="text-[0.65rem] sm:text-xs text-slate-600 font-bold uppercase tracking-wider mt-1.5">Headquartered Desk</div>
       </div>
     </div>
   </section>
@@ -124,28 +133,28 @@ const services = [
       <main class="lg:col-span-8 space-y-8 sm:space-y-12">
         
         <!-- Corporate Intro -->
-        <section class="bg-white p-5 sm:p-10 rounded-2xl border border-slate-200/90 shadow-xs sm:shadow-sm space-y-5 sm:space-y-6">
+        <section class="bg-white p-6 sm:p-10 rounded-2xl border border-slate-200/90 shadow-sm space-y-5 sm:space-y-6">
           <div>
-            <span class="text-xs font-bold text-red-600 uppercase tracking-widest block mb-1">Company Overview</span>
-            <h2 class="text-xl sm:text-3xl font-black text-slate-900 tracking-tight">Who We Are</h2>
+            <span class="text-xs font-bold text-brand-orange uppercase tracking-widest block mb-1">Company Overview</span>
+            <h2 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">Who We Are</h2>
           </div>
 
           <p class="text-sm sm:text-base text-slate-700 leading-relaxed text-left">
-            <strong>Aakkam Corporate Solutions</strong> is a premier financial consulting and advisory firm founded with the vision to create one of the industry's most efficient financial and advisory services hubs, powered by qualitative human interfacing technology.
+            <strong class="text-slate-900 font-bold">Aakkam Corporate Solutions</strong> is a premier financial consulting and advisory firm founded with the vision to create one of the industry's most efficient financial and advisory services hubs, powered by qualitative human interfacing technology.
           </p>
 
           <p class="text-sm sm:text-base text-slate-700 leading-relaxed text-left">
             The mission of the company is maximizing client satisfaction through innovative, transparent, and need-based solutions. Aakkam is dedicated to providing top-notch financial solutions packages to its clients to help them achieve and sustain competitive advantage in their respective industries.
           </p>
 
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 pt-1 sm:pt-2">
-            <div class="p-4 sm:p-5 rounded-xl bg-blue-50/70 border border-blue-100">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1 sm:pt-2">
+            <div class="p-5 rounded-xl bg-orange-50/60 border border-orange-100">
               <h4 class="font-bold text-slate-900 text-sm mb-1">Optimized Capital Mobilization</h4>
               <p class="text-xs text-slate-600 leading-relaxed">
                 Years of business evaluation enable us to optimally mobilize debt and equity resources for corporate and institutional mandates.
               </p>
             </div>
-            <div class="p-4 sm:p-5 rounded-xl bg-slate-50 border border-slate-200">
+            <div class="p-5 rounded-xl bg-slate-50 border border-slate-200">
               <h4 class="font-bold text-slate-900 text-sm mb-1">High-Yield Deployment</h4>
               <p class="text-xs text-slate-600 leading-relaxed">
                 We facilitate the profitable deployment of institutional and private capital into sustainable, high-growth Indian enterprises.
@@ -158,33 +167,37 @@ const services = [
           </p>
         </section>
 
-        <!-- Services Breakdown Grid -->
-        <section class="space-y-5 sm:space-y-6">
+        <!-- Services Breakdown Grid with Vector Icons -->
+        <section class="space-y-6">
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
             <div>
-              <span class="text-xs font-bold text-blue-600 uppercase tracking-widest block mb-1">Practice Areas</span>
-              <h2 class="text-xl sm:text-3xl font-black text-slate-900 tracking-tight">Core Financial Advisory Services</h2>
+              <span class="text-xs font-bold text-brand-orange uppercase tracking-widest block mb-1">Practice Areas</span>
+              <h2 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">Core Financial Advisory Services</h2>
             </div>
-            <a href="/services" class="text-xs sm:text-sm font-bold text-red-600 hover:text-red-700 self-start sm:self-auto">
-              View All 8 Services →
+            <a href="/services" class="text-xs sm:text-sm font-bold text-brand-orange hover:text-brand-orangeHover self-start sm:self-auto flex items-center gap-1">
+              <span>View All 8 Services</span>
+              <Icons name="chevron-right" class="w-3.5 h-3.5" />
             </a>
           </div>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
             {services.map((svc) => (
-              <div class="bg-white p-5 sm:p-6 rounded-2xl border border-slate-200/90 shadow-xs sm:shadow-sm hover:shadow-md hover:border-blue-400 transition-all flex flex-col justify-between group">
+              <div class="bg-white p-6 rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-md hover:border-brand-orange transition-all flex flex-col justify-between group">
                 <div>
-                  <div class="text-2xl sm:text-3xl mb-2 sm:mb-3">{svc.icon}</div>
-                  <h3 class="text-base sm:text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2">
+                  <div class="w-12 h-12 rounded-xl bg-orange-50 text-brand-orange flex items-center justify-center mb-4 group-hover:bg-brand-orange group-hover:text-white transition-colors">
+                    <Icons name={svc.icon} class="w-6 h-6" />
+                  </div>
+                  <h3 class="text-base sm:text-lg font-bold text-slate-900 group-hover:text-brand-orange transition-colors mb-2">
                     <a href={svc.href}>{svc.title}</a>
                   </h3>
                   <p class="text-xs text-slate-600 leading-relaxed">
                     {svc.desc}
                   </p>
                 </div>
-                <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
-                  <a href={svc.href} class="text-xs font-bold text-red-600 hover:text-red-700">
-                    Explore Details →
+                <div class="mt-5 pt-3 border-t border-slate-100 flex items-center justify-between">
+                  <a href={svc.href} class="text-xs font-bold text-brand-orange hover:text-brand-orangeHover flex items-center gap-1">
+                    <span>Explore Details</span>
+                    <Icons name="chevron-right" class="w-3.5 h-3.5" />
                   </a>
                 </div>
               </div>
@@ -192,30 +205,63 @@ const services = [
           </div>
         </section>
 
-        <!-- Quote Callouts: Side-by-side on PC, stacked on phone -->
+        <!-- Quote Callouts: Clean, high-contrast light & dark styling -->
         <section class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
-          <blockquote class="bg-gradient-to-br from-blue-900 to-slate-900 text-white p-5 sm:p-6 rounded-2xl shadow-xs">
-            <p class="text-sm italic leading-relaxed text-blue-100">
+          <blockquote class="bg-gradient-to-br from-slate-900 to-slate-950 text-white p-6 rounded-2xl shadow-sm border border-slate-800">
+            <p class="text-sm italic leading-relaxed text-slate-200">
               “Well Begun is half Done.”
             </p>
-            <footer class="mt-3 sm:mt-4 text-xs font-bold text-red-400 uppercase tracking-wider">
-              — Aristotle
+            <footer class="mt-4 text-xs font-bold text-brand-orange uppercase tracking-wider flex items-center gap-1.5">
+              <span>— Aristotle</span>
             </footer>
           </blockquote>
 
-          <blockquote class="bg-gradient-to-br from-slate-900 to-slate-950 text-white p-5 sm:p-6 rounded-2xl shadow-xs">
+          <blockquote class="bg-gradient-to-br from-slate-900 to-slate-950 text-white p-6 rounded-2xl shadow-sm border border-slate-800">
             <p class="text-sm italic leading-relaxed text-slate-200">
               “Whenever you see a successful business, someone once made a courageous decision.”
             </p>
-            <footer class="mt-3 sm:mt-4 text-xs font-bold text-red-400 uppercase tracking-wider">
-              — Peter F. Drucker
+            <footer class="mt-4 text-xs font-bold text-brand-orange uppercase tracking-wider flex items-center gap-1.5">
+              <span>— Peter F. Drucker</span>
             </footer>
           </blockquote>
         </section>
 
-        <!-- Lead Capture Form Component -->
-        <section>
-          <ContactForm />
+        <!-- Direct Reach-Out Hub (Replaces Old Inquiry Form) -->
+        <section class="bg-gradient-to-br from-orange-50 via-white to-orange-50/40 p-6 sm:p-8 rounded-2xl border-2 border-brand-orange/30 shadow-sm">
+          <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+            <div class="space-y-2">
+              <span class="text-xs font-bold text-brand-orange uppercase tracking-wider block">Direct Communication</span>
+              <h3 class="text-xl sm:text-2xl font-black text-slate-900">Please Reach Out to Us via Call, Email or WhatsApp</h3>
+              <p class="text-xs sm:text-sm text-slate-600 max-w-xl leading-relaxed">
+                Connect directly with our senior advisory desk. Our WhatsApp number is identical to our mobile phone number (<strong class="text-slate-900">+91 70103 11971</strong>).
+              </p>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-3 w-full md:w-auto shrink-0">
+              <a
+                href="https://wa.me/917010311971?text=Hello%20Aakkam%20Corporate%20Solutions%2C%20I%20would%20like%20to%20connect%20regarding%20corporate%20advisory%20services."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-emerald-600 text-white hover:bg-emerald-700 text-xs font-bold transition-all shadow-sm active:scale-95 text-center"
+              >
+                <Icons name="whatsapp" class="w-4 h-4" />
+                <span>Chat on WhatsApp</span>
+              </a>
+              <a
+                href="tel:+917010311971"
+                class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-slate-900 text-white hover:bg-brand-orange text-xs font-bold transition-all shadow-sm active:scale-95 text-center"
+              >
+                <Icons name="phone" class="w-4 h-4" />
+                <span>Call Hotline</span>
+              </a>
+              <a
+                href="/contact"
+                class="inline-flex items-center justify-center gap-1 px-5 py-3 rounded-xl bg-white text-slate-800 hover:bg-slate-50 border border-slate-200 text-xs font-bold transition-all shadow-xs text-center"
+              >
+                <span>Contact Page</span>
+                <Icons name="chevron-right" class="w-3.5 h-3.5" />
+              </a>
+            </div>
+          </div>
         </section>
 
       </main>

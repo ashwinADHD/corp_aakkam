@@ -5,13 +5,15 @@ export default {
     extend: {
       colors: {
         brand: {
+          orange: '#ea580c',        // Krasis Vibrant Accent Orange
+          orangeHover: '#c2410c',   // Deep burnt orange
+          orangeLight: '#fff7ed',   // Warm soft orange tint
+          orangeBorder: '#fdba74',  // Light orange border
+          dark: '#0f172a',          // Obsidian slate
+          slate: '#334155',         // Muted body text
+          surface: '#f8fafc',       // Crisp light background
+          border: '#e2e8f0',        // Subtle card border
           navy: '#0a192f',
-          dark: '#0f172a',
-          slate: '#1e293b',
-          blue: '#1d4ed8',
-          blueHover: '#1e40af',
-          red: '#dc2626',
-          redHover: '#b91c1c',
         },
       },
     },

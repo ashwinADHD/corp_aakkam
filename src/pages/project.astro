@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Sidebar from '../components/Sidebar.astro';
+import Icons from '../components/Icons.astro';
 ---
 
 <Layout
@@ -8,30 +9,31 @@ import Sidebar from '../components/Sidebar.astro';
   description="Comprehensive project feasibility studies, Detailed Project Report (DPR) preparation, cash flow discounting, NPV optimization, and bank appraisal documentation."
 >
 
-  <div class="bg-gradient-to-r from-slate-950 via-slate-900 to-blue-950 text-white py-10 sm:py-14 px-4 sm:px-6 lg:px-8 border-b border-slate-800">
+  <!-- Clean Light Header with Krasis Orange Accents -->
+  <section class="bg-gradient-to-b from-orange-50/60 via-white to-slate-50 border-b border-slate-200/80 py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
     <div class="max-w-7xl mx-auto">
-      <span class="inline-block bg-red-600 text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-3">
+      <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase bg-orange-100/80 text-brand-orange border border-orange-200 mb-4">
         Project Advisory
       </span>
-      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-tight">
         Project Preparation & Appraisal
       </h1>
-      <p class="text-slate-300 max-w-2xl mt-3 text-base sm:text-lg">
+      <p class="text-slate-600 max-w-2xl mt-4 text-base sm:text-lg leading-relaxed">
         Transforming industrial vision into rigorous, bankable Detailed Project Reports (DPR) and cash-flow models.
       </p>
     </div>
-  </div>
+  </section>
 
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
       
-      <main class="lg:col-span-8 bg-white p-5 sm:p-10 rounded-2xl border border-slate-200/90 shadow-sm space-y-6">
+      <main class="lg:col-span-8 bg-white p-6 sm:p-10 rounded-2xl border border-slate-200/90 shadow-sm space-y-6">
         
-        <blockquote class="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-r-xl">
-          <p class="text-base font-bold text-slate-800 italic">
+        <blockquote class="bg-orange-50/60 border-l-4 border-brand-orange p-6 rounded-r-2xl">
+          <p class="text-base font-bold text-slate-900 italic">
             “Well Begun is half Done”
           </p>
-          <footer class="mt-1 text-xs font-bold text-red-600 uppercase tracking-wide">
+          <footer class="mt-2 text-xs font-bold text-brand-orange uppercase tracking-wider">
             — Aristotle
           </footer>
         </blockquote>
@@ -50,65 +52,75 @@ import Sidebar from '../components/Sidebar.astro';
 
         <h3 class="text-xl font-bold text-slate-900 pt-2">Key Questions We Initiate:</h3>
         <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs">
-          <div class="p-3 bg-slate-50 rounded-lg border border-slate-200"><strong>What for:</strong> Project objectives</div>
-          <div class="p-3 bg-slate-50 rounded-lg border border-slate-200"><strong>How:</strong> Process & resources</div>
-          <div class="p-3 bg-slate-50 rounded-lg border border-slate-200"><strong>Who:</strong> Stakeholders & partners</div>
-          <div class="p-3 bg-slate-50 rounded-lg border border-slate-200"><strong>When:</strong> Time milestones</div>
-          <div class="p-3 bg-slate-50 rounded-lg border border-slate-200"><strong>Where:</strong> Site location</div>
-          <div class="p-3 bg-slate-50 rounded-lg border border-slate-200"><strong>What:</strong> Core activity</div>
+          <div class="p-4 bg-orange-50/40 rounded-xl border border-orange-100"><strong class="text-brand-orange block mb-0.5">What for:</strong> Project objectives</div>
+          <div class="p-4 bg-orange-50/40 rounded-xl border border-orange-100"><strong class="text-brand-orange block mb-0.5">How:</strong> Process & resources</div>
+          <div class="p-4 bg-orange-50/40 rounded-xl border border-orange-100"><strong class="text-brand-orange block mb-0.5">Who:</strong> Stakeholders & partners</div>
+          <div class="p-4 bg-slate-50 rounded-xl border border-slate-200"><strong class="text-slate-800 block mb-0.5">When:</strong> Time milestones</div>
+          <div class="p-4 bg-slate-50 rounded-xl border border-slate-200"><strong class="text-slate-800 block mb-0.5">Where:</strong> Site location</div>
+          <div class="p-4 bg-slate-50 rounded-xl border border-slate-200"><strong class="text-slate-800 block mb-0.5">What:</strong> Core activity</div>
         </div>
 
         <h3 class="text-xl font-bold text-slate-900 pt-4">Systematic Approach in Project Preparation:</h3>
         
         <div class="space-y-4 text-sm text-slate-700">
-          <div>
-            <h4 class="font-bold text-slate-900 text-base">1. Project Need Analysis</h4>
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/80">
+            <h4 class="font-bold text-slate-900 text-sm">1. Project Need Analysis</h4>
             <p class="text-xs leading-relaxed text-slate-600 mt-1">Factors considered are problem, solutions, beneficiaries and decisions. The decision to take up the project lies on how these factors interact.</p>
           </div>
 
-          <div>
-            <h4 class="font-bold text-slate-900 text-base">2. Problem Formulation and Statement of Problem</h4>
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/80">
+            <h4 class="font-bold text-slate-900 text-sm">2. Problem Formulation and Statement of Problem</h4>
             <p class="text-xs leading-relaxed text-slate-600 mt-1">Detailed research of the problem, scope, intervention areas, and expected outcomes hypothesized.</p>
           </div>
 
-          <div>
-            <h4 class="font-bold text-slate-900 text-base">3. Project Planning</h4>
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/80">
+            <h4 class="font-bold text-slate-900 text-sm">3. Project Planning</h4>
             <p class="text-xs leading-relaxed text-slate-600 mt-1">Preparation of comprehensive activity charts, timelines, milestone calendars, and coordination points.</p>
           </div>
 
-          <div>
-            <h4 class="font-bold text-slate-900 text-base">4. Project Budgeting</h4>
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/80">
+            <h4 class="font-bold text-slate-900 text-sm">4. Project Budgeting</h4>
             <p class="text-xs leading-relaxed text-slate-600 mt-1">Cost category budgets (materials, capital expenditure, administration) and activity budgets with multi-year inflation assumptions.</p>
           </div>
 
-          <div>
-            <h4 class="font-bold text-slate-900 text-base">5. Multi-Pillar Feasibility Analysis</h4>
-            <ul class="text-xs text-slate-600 list-disc list-inside mt-1 space-y-1">
-              <li>Management Appraisal & Governance</li>
-              <li>Technical Feasibility & Engineering</li>
-              <li>Financial Feasibility & NPV/IRR/DSCR</li>
-              <li>Commercial & Market Appraisal</li>
-              <li>Economic Feasibility</li>
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/80">
+            <h4 class="font-bold text-slate-900 text-sm">5. Multi-Pillar Feasibility Analysis</h4>
+            <ul class="text-xs text-slate-600 mt-2 space-y-1">
+              <li class="flex items-center gap-1.5"><Icons name="check" class="w-3.5 h-3.5 text-brand-orange shrink-0" /> Management Appraisal & Governance</li>
+              <li class="flex items-center gap-1.5"><Icons name="check" class="w-3.5 h-3.5 text-brand-orange shrink-0" /> Technical Feasibility & Engineering</li>
+              <li class="flex items-center gap-1.5"><Icons name="check" class="w-3.5 h-3.5 text-brand-orange shrink-0" /> Financial Feasibility & NPV/IRR/DSCR</li>
+              <li class="flex items-center gap-1.5"><Icons name="check" class="w-3.5 h-3.5 text-brand-orange shrink-0" /> Commercial & Market Appraisal</li>
+              <li class="flex items-center gap-1.5"><Icons name="check" class="w-3.5 h-3.5 text-brand-orange shrink-0" /> Economic Feasibility</li>
             </ul>
           </div>
 
-          <div>
-            <h4 class="font-bold text-slate-900 text-base">6. Implementation & Operational Rollout</h4>
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/80">
+            <h4 class="font-bold text-slate-900 text-sm">6. Implementation & Operational Rollout</h4>
             <p class="text-xs leading-relaxed text-slate-600 mt-1">Scheduling operational activities one by one and establishing functional relationships.</p>
           </div>
 
-          <div>
-            <h4 class="font-bold text-slate-900 text-base">7. Monitoring and Periodical Evaluation</h4>
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/80">
+            <h4 class="font-bold text-slate-900 text-sm">7. Monitoring and Periodical Evaluation</h4>
             <p class="text-xs leading-relaxed text-slate-600 mt-1">Observing progress, tracking deviations from planned performance, and executing milestone control actions.</p>
           </div>
         </div>
 
-        <div class="pt-6">
+        <div class="pt-6 border-t border-slate-100 flex flex-wrap gap-4 items-center">
           <a
             href="/contact"
-            class="w-full sm:w-auto inline-flex justify-center items-center px-6 py-3.5 rounded-xl text-sm font-bold text-white bg-red-600 hover:bg-red-700 shadow-sm transition-all"
+            class="inline-flex justify-center items-center gap-2 px-6 py-3.5 rounded-xl text-sm font-bold text-white bg-brand-orange hover:bg-brand-orangeHover shadow-md shadow-orange-500/20 active:scale-[0.98] transition-all"
           >
-            Commission a Project Report →
+            <span>Commission a Project Report</span>
+            <Icons name="chevron-right" class="w-4 h-4" />
+          </a>
+          <a
+            href="https://wa.me/917010311971?text=Hello%20Aakkam%2C%20I%20would%20like%20to%20discuss%20project%20preparation%20and%20appraisal."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex justify-center items-center gap-2 px-5 py-3.5 rounded-xl text-sm font-bold text-emerald-700 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 active:scale-[0.98] transition-all"
+          >
+            <Icons name="whatsapp" class="w-4 h-4 text-emerald-600" />
+            <span>Chat on WhatsApp</span>
           </a>
         </div>
       </main>

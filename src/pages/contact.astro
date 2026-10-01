@@ -1,63 +1,196 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Sidebar from '../components/Sidebar.astro';
-import ContactForm from '../components/ContactForm.astro';
+import Icons from '../components/Icons.astro';
 ---
 
 <Layout
   title="Contact Us | Aakkam Corporate Solutions — West Mambalam, Chennai"
-  description="Contact Aakkam Corporate Solutions in West Mambalam, Chennai. Reach our corporate finance leadership desk via mobile +91 70103 11971 or ceo@aakkamcorp.com."
+  description="Please reach out to Aakkam Corporate Solutions via Call, Email, or WhatsApp (+91 70103 11971). Direct leadership communication for corporate finance and restructuring advisory in Chennai."
 >
 
-  <!-- Hero Header -->
-  <div class="bg-gradient-to-r from-slate-950 via-slate-900 to-blue-950 text-white py-10 sm:py-14 px-4 sm:px-6 lg:px-8 border-b border-slate-800">
+  <!-- Clean Light-Themed Header with Krasis Orange Accents -->
+  <section class="bg-gradient-to-b from-orange-50/60 via-white to-slate-50 border-b border-slate-200/80 py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
     <div class="max-w-7xl mx-auto">
-      <span class="inline-block bg-red-600 text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-3">
-        Client Advisory Desk
-      </span>
-      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
-        Connect With Our Advisory Desk
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase bg-orange-100/80 text-brand-orange border border-orange-200 mb-4">
+        <span class="w-2 h-2 rounded-full bg-brand-orange animate-ping"></span>
+        Direct Leadership Channel
+      </div>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-tight">
+        Please Reach Out to Us via Call, Email or WhatsApp
       </h1>
-      <p class="text-slate-300 max-w-2xl mt-3 text-base sm:text-lg">
-        Initiate a confidential discussion with our senior partners regarding your enterprise capitalization or restructuring mandate.
+      <p class="text-slate-600 max-w-3xl mt-4 text-base sm:text-lg leading-relaxed">
+        Connect directly with our senior partners regarding your enterprise capitalization, debt restructuring, or M&A transaction mandate. Our WhatsApp number is identical to our direct mobile hotline (<strong class="text-slate-900">+91 70103 11971</strong>).
       </p>
     </div>
-  </div>
+  </section>
 
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
       
       <main class="lg:col-span-8 space-y-8">
         
-        <!-- Contact Information Cards -->
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
-          <div class="bg-white p-6 rounded-2xl border border-slate-200/90 shadow-sm">
-            <span class="text-2xl mb-2 block">📍</span>
-            <h4 class="font-bold text-slate-900 text-sm mb-1">Corporate Office</h4>
-            <p class="text-xs text-slate-600 leading-relaxed">
-              No:3, 2nd Floor, Swaminathan Street, West Mambalam, Chennai - 600 033, India
-            </p>
+        <!-- Primary Direct Reach-Out Channels (3 Highlight Cards) -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+          
+          <!-- Channel 1: Direct Voice Call -->
+          <div class="bg-white p-6 sm:p-7 rounded-2xl border-2 border-slate-200/80 hover:border-brand-orange hover:shadow-lg transition-all flex flex-col justify-between group">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-orange-50 text-brand-orange flex items-center justify-center mb-4 group-hover:bg-brand-orange group-hover:text-white transition-colors shadow-sm">
+                <Icons name="phone" class="w-6 h-6" />
+              </div>
+              <span class="text-[0.65rem] font-bold text-brand-orange uppercase tracking-wider block mb-1">Direct Voice Line</span>
+              <h3 class="font-black text-slate-900 text-lg mb-2">Phone Call</h3>
+              <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                Speak directly with our senior advisory desk for immediate guidance on active transaction mandates.
+              </p>
+              <div class="text-xs text-slate-500 font-medium mb-4">
+                Available: <span class="text-slate-800 font-bold">Mon – Sat (9:30 AM – 7:00 PM IST)</span>
+              </div>
+            </div>
+            
+            <a
+              href="tel:+917010311971"
+              class="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-slate-900 text-white hover:bg-brand-orange text-xs font-bold transition-all shadow-sm active:scale-95 text-center"
+            >
+              <Icons name="phone" class="w-4 h-4 text-brand-orange group-hover:text-white" />
+              <span>Call +91 70103 11971</span>
+            </a>
           </div>
 
-          <div class="bg-white p-6 rounded-2xl border border-slate-200/90 shadow-sm">
-            <span class="text-2xl mb-2 block">📱</span>
-            <h4 class="font-bold text-slate-900 text-sm mb-1">Mobile Hotline</h4>
-            <p class="text-xs text-slate-600 leading-relaxed">
-              Direct: <a href="tel:+917010311971" class="text-red-600 font-bold hover:underline">+91 70103 11971</a>
-            </p>
+          <!-- Channel 2: WhatsApp Direct -->
+          <div class="bg-white p-6 sm:p-7 rounded-2xl border-2 border-emerald-200/80 hover:border-emerald-500 hover:shadow-lg transition-all flex flex-col justify-between group">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-4 group-hover:bg-emerald-600 group-hover:text-white transition-colors shadow-sm">
+                <Icons name="whatsapp" class="w-6 h-6" />
+              </div>
+              <span class="text-[0.65rem] font-bold text-emerald-600 uppercase tracking-wider block mb-1">Instant Messaging</span>
+              <h3 class="font-black text-slate-900 text-lg mb-2">WhatsApp Direct</h3>
+              <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                Our WhatsApp number is the same as our cell phone number. Message us for swift mandate inquiries.
+              </p>
+              <div class="text-xs text-slate-500 font-medium mb-4">
+                Number: <span class="text-slate-800 font-bold">+91 70103 11971</span>
+              </div>
+            </div>
+            
+            <a
+              href="https://wa.me/917010311971?text=Hello%20Aakkam%20Corporate%20Solutions%2C%20I%20would%20like%20to%20connect%20regarding%20corporate%20advisory%20services."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-emerald-600 text-white hover:bg-emerald-700 text-xs font-bold transition-all shadow-sm active:scale-95 text-center"
+            >
+              <Icons name="whatsapp" class="w-4 h-4" />
+              <span>Chat on WhatsApp</span>
+            </a>
           </div>
 
-          <div class="bg-white p-6 rounded-2xl border border-slate-200/90 shadow-sm">
-            <span class="text-2xl mb-2 block">✉️</span>
-            <h4 class="font-bold text-slate-900 text-sm mb-1">Executive Inquiries</h4>
-            <p class="text-xs text-slate-600 leading-relaxed">
-              <a href="mailto:ceo@aakkamcorp.com" class="text-blue-600 font-bold hover:underline">ceo@aakkamcorp.com</a>
-            </p>
+          <!-- Channel 3: Executive Email -->
+          <div class="bg-white p-6 sm:p-7 rounded-2xl border-2 border-slate-200/80 hover:border-brand-orange hover:shadow-lg transition-all flex flex-col justify-between group">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-orange-50 text-brand-orange flex items-center justify-center mb-4 group-hover:bg-brand-orange group-hover:text-white transition-colors shadow-sm">
+                <Icons name="mail" class="w-6 h-6" />
+              </div>
+              <span class="text-[0.65rem] font-bold text-brand-orange uppercase tracking-wider block mb-1">Executive Inquiries</span>
+              <h3 class="font-black text-slate-900 text-lg mb-2">Executive Email</h3>
+              <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                Submit project dossiers, financial abstracts, restructuring briefs, or detailed transaction documentation.
+              </p>
+              <div class="text-xs text-slate-500 font-medium mb-4">
+                Address: <span class="text-slate-800 font-bold">ceo@aakkamcorp.com</span>
+              </div>
+            </div>
+            
+            <a
+              href="mailto:ceo@aakkamcorp.com"
+              class="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-slate-900 text-white hover:bg-brand-orange text-xs font-bold transition-all shadow-sm active:scale-95 text-center"
+            >
+              <Icons name="mail" class="w-4 h-4 text-brand-orange group-hover:text-white" />
+              <span>Send Executive Email</span>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Corporate Headquarters & Meeting Desk -->
+        <div class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200/90 shadow-sm">
+          <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6 border-b border-slate-100">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-orange-50 text-brand-orange flex items-center justify-center shrink-0">
+                <Icons name="map-pin" class="w-5 h-5" />
+              </div>
+              <div>
+                <h3 class="font-black text-slate-900 text-lg">Corporate Headquarters</h3>
+                <p class="text-xs text-slate-500">Registered advisory office in Chennai, Tamil Nadu</p>
+              </div>
+            </div>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-slate-100 text-slate-700">
+              <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+              By Prior Appointment
+            </span>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-6">
+            <div>
+              <p class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Registered Address</p>
+              <p class="text-sm font-semibold text-slate-800 leading-relaxed">
+                No:3, 2nd Floor, Swaminathan Street,<br />
+                West Mambalam, Chennai - 600 033,<br />
+                Tamil Nadu, India
+              </p>
+              <p class="text-xs text-slate-500 mt-2">
+                Accessible via Chennai Suburban Rail (West Mambalam Station) and Postal Colony arterial roads.
+              </p>
+            </div>
+
+            <div class="space-y-3">
+              <p class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Direct Communication Summary</p>
+              <div class="flex items-center justify-between p-3 rounded-xl bg-slate-50 border border-slate-100 text-xs">
+                <span class="font-medium text-slate-600 flex items-center gap-2">
+                  <Icons name="phone" class="w-3.5 h-3.5 text-brand-orange" />
+                  Voice Calls:
+                </span>
+                <a href="tel:+917010311971" class="font-bold text-slate-900 hover:text-brand-orange">+91 70103 11971</a>
+              </div>
+              <div class="flex items-center justify-between p-3 rounded-xl bg-slate-50 border border-slate-100 text-xs">
+                <span class="font-medium text-slate-600 flex items-center gap-2">
+                  <Icons name="whatsapp" class="w-3.5 h-3.5 text-emerald-600" />
+                  WhatsApp Direct:
+                </span>
+                <a 
+                  href="https://wa.me/917010311971?text=Hello%20Aakkam%20Corporate%20Solutions%2C%20I%20would%20like%20to%20connect%20regarding%20corporate%20advisory%20services."
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  class="font-bold text-emerald-600 hover:text-emerald-700"
+                >
+                  +91 70103 11971
+                </a>
+              </div>
+              <div class="flex items-center justify-between p-3 rounded-xl bg-slate-50 border border-slate-100 text-xs">
+                <span class="font-medium text-slate-600 flex items-center gap-2">
+                  <Icons name="mail" class="w-3.5 h-3.5 text-brand-orange" />
+                  Email:
+                </span>
+                <a href="mailto:ceo@aakkamcorp.com" class="font-bold text-slate-900 hover:text-brand-orange">ceo@aakkamcorp.com</a>
+              </div>
+            </div>
           </div>
         </div>
 
-        <!-- Serverless Lead Capture Form Component -->
-        <ContactForm />
+        <!-- Institutional Non-Disclosure & Integrity Assurance -->
+        <div class="bg-gradient-to-br from-slate-900 to-slate-950 text-white p-6 sm:p-8 rounded-2xl border border-slate-800 shadow-md">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-xl bg-brand-orange/20 text-brand-orange flex items-center justify-center shrink-0 mt-0.5">
+              <Icons name="shield" class="w-5 h-5" />
+            </div>
+            <div class="space-y-2">
+              <h4 class="font-bold text-base sm:text-lg text-white">Strict Non-Disclosure & Regulatory Compliance</h4>
+              <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                All verbal communications, messages, and email documents shared with Aakkam Corporate Solutions are treated under strict professional non-disclosure. We execute bilateral Non-Disclosure Agreements (NDAs) prior to receiving proprietary financial data or enterprise restructuring records.
+              </p>
+            </div>
+          </div>
+        </div>
 
       </main>
 

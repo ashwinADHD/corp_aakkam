@@ -1,62 +1,63 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Sidebar from '../components/Sidebar.astro';
+import Icons from '../components/Icons.astro';
 
 const services = [
   {
     title: 'Fund Raising Solutions',
     desc: 'Structure and access private capital, term loans, private equity placements, foreign currency convertible bonds (FCCBs), and future receivables securitization.',
     href: '/resource',
-    icon: '💰',
+    icon: 'fund-raising',
     bullets: ['Term Loans & Working Capital', 'Private Equity & Pre-IPO', 'Hybrid FCCBs', 'Asset-Backed Securitization']
   },
   {
     title: 'Sick Industries Revival & Restructuring',
     desc: 'Negotiate One Time Settlements (OTS) with consortium lenders, obtain BIFR/IBC relief packages, and design corporate turnaround structures.',
     href: '/sick',
-    icon: '🔄',
+    icon: 'revival',
     bullets: ['One Time Settlement (OTS)', 'Debt-to-Equity Conversion', 'Moratorium Extension', 'Hiving Off Viable Units']
   },
   {
     title: 'Project Preparation & Appraisal',
     desc: 'Comprehensive feasibility studies, discounted cash flow valuation, NPV sensitivity models, and Detailed Project Reports (DPR).',
     href: '/project',
-    icon: '📋',
+    icon: 'project',
     bullets: ['Detailed Project Reports (DPR)', 'Discounted Cash Flows (DCF)', 'Bank Appraisal Modeling', 'Technical Feasibility']
   },
   {
     title: 'Due Diligence Services',
     desc: 'In-depth institutional business and legal due diligence for mergers, acquisitions, joint ventures, and private equity investments.',
     href: '/due',
-    icon: '🔍',
+    icon: 'diligence',
     bullets: ['Commercial & Market Verification', 'Legal & Governance Audit', 'Customer Reference Calls', 'IP & Litigation Review']
   },
   {
     title: 'M & A Advisory Solutions',
     desc: 'Corporate takeover strategies, target company valuation, tax-efficient transaction structuring, special committee advisory, and deal consummation.',
     href: '/advisory',
-    icon: '🤝',
+    icon: 'advisory',
     bullets: ['Target Sourcing & Valuation', 'Transaction Structuring', 'Deal Negotiation & Closing', 'Fair Opinions']
   },
   {
     title: 'IPO Advisory Services',
     desc: 'Public market readiness assessment, merchant banker and underwriter selection, DRHP and MD&A drafting, and post-listing compliance.',
     href: '/ipo',
-    icon: '🔔',
+    icon: 'ipo',
     bullets: ['Readiness & Governance Audits', 'Underwriter Selection', 'DRHP & MD&A Documentation', 'Post-Listing Compliance']
   },
   {
     title: 'Venture Capital Funding',
     desc: 'Early to growth-stage capital mobilization, institutional-grade pitch decks, unit-economics modeling, valuation, and term sheet covenants.',
     href: '/venture',
-    icon: '🚀',
+    icon: 'venture',
     bullets: ['Seed & Series A Rounds', 'Financial Modeling & Decks', 'Valuation Benchmarking', 'Term Sheet Negotiation']
   },
   {
     title: 'Corporate Tax Planning & Advisory',
     desc: 'Direct and indirect corporate tax structuring, transaction tax optimization for M&A, transfer pricing, and revenue dispute resolution.',
     href: '/tax',
-    icon: '📑',
+    icon: 'tax',
     bullets: ['Transaction Tax Optimization', 'Corporate Direct Tax Planning', 'Transfer Pricing & DTAA', 'Appellate Representation']
   },
 ];
@@ -67,22 +68,22 @@ const services = [
   description="Explore our end-to-end corporate finance advisory practices: Fund Raising, Turnaround & Restructuring, M&A Advisory, Project Appraisal, Due Diligence, and IPO Advisory."
 >
 
-  <!-- Hero Header -->
-  <div class="bg-gradient-to-r from-slate-950 via-slate-900 to-blue-950 text-white py-10 sm:py-14 px-4 sm:px-6 lg:px-8 border-b border-slate-800">
+  <!-- Clean Light Header with Krasis Orange Accents -->
+  <section class="bg-gradient-to-b from-orange-50/60 via-white to-slate-50 border-b border-slate-200/80 py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
     <div class="max-w-7xl mx-auto">
-      <span class="inline-block bg-red-600 text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-3">
+      <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase bg-orange-100/80 text-brand-orange border border-orange-200 mb-4">
         Practice Areas
       </span>
-      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-tight">
         Our Financial Advisory Services
       </h1>
-      <p class="text-slate-300 max-w-2xl mt-3 text-base sm:text-lg">
+      <p class="text-slate-600 max-w-2xl mt-4 text-base sm:text-lg leading-relaxed">
         Tailored institutional financial packages designed to solve complex capitalization, turnaround, and transaction mandates.
       </p>
     </div>
-  </div>
+  </section>
 
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
       
       <main class="lg:col-span-8 space-y-6">
@@ -95,11 +96,13 @@ const services = [
 
         <div class="grid grid-cols-1 gap-6">
           {services.map((svc) => (
-            <div class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-md hover:border-blue-400 transition-all flex flex-col sm:flex-row gap-6 justify-between items-start group">
+            <div class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-md hover:border-brand-orange transition-all flex flex-col sm:flex-row gap-6 justify-between items-start group">
               <div class="space-y-3 flex-1">
                 <div class="flex items-center gap-3">
-                  <span class="text-2xl">{svc.icon}</span>
-                  <h3 class="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                  <div class="w-10 h-10 rounded-xl bg-orange-50 text-brand-orange flex items-center justify-center shrink-0 group-hover:bg-brand-orange group-hover:text-white transition-colors">
+                    <Icons name={svc.icon} class="w-5 h-5" />
+                  </div>
+                  <h3 class="text-xl font-bold text-slate-900 group-hover:text-brand-orange transition-colors">
                     <a href={svc.href}>{svc.title}</a>
                   </h3>
                 </div>
@@ -108,18 +111,20 @@ const services = [
                 </p>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-2">
                   {svc.bullets.map((b) => (
-                    <span class="text-xs text-slate-700 flex items-center gap-1.5">
-                      <span class="text-red-600 font-bold">✓</span> {b}
+                    <span class="text-xs text-slate-700 flex items-center gap-2">
+                      <Icons name="check" class="w-3.5 h-3.5 text-brand-orange shrink-0" />
+                      <span>{b}</span>
                     </span>
                   ))}
                 </div>
               </div>
-              <div class="sm:self-center shrink-0">
+              <div class="sm:self-center shrink-0 w-full sm:w-auto">
                 <a
                   href={svc.href}
-                  class="inline-flex items-center px-4 py-2.5 rounded-lg text-xs font-bold text-white bg-slate-900 hover:bg-blue-600 transition-colors"
+                  class="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-5 py-2.5 rounded-xl text-xs font-bold text-white bg-slate-900 hover:bg-brand-orange transition-colors shadow-xs"
                 >
-                  View Details →
+                  <span>View Details</span>
+                  <Icons name="chevron-right" class="w-3.5 h-3.5" />
                 </a>
               </div>
             </div>

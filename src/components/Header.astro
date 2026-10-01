@@ -1,4 +1,6 @@
 ---
+import Icons from './Icons.astro';
+
 interface Props {
   currentPath?: string;
 }
@@ -14,24 +16,34 @@ const navLinks = [
 ];
 ---
 
-<!-- Top Contact Bar: Optimized for Mobile & Desktop -->
-<aside class="bg-slate-900 text-slate-300 text-xs py-2 px-3 sm:px-6 border-b border-slate-800" aria-label="Quick contact information">
-  <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-1.5 sm:gap-4">
-    <!-- Location (Truncated cleanly on very small screens) -->
+<!-- Top Contact Bar: Optimized for Mobile & Desktop with Vector Icons -->
+<aside class="bg-slate-900 text-slate-300 text-xs py-2.5 px-3 sm:px-6 border-b border-slate-800" aria-label="Quick contact information">
+  <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-4">
+    <!-- Location -->
     <div class="flex items-center gap-1.5 text-center sm:text-left text-[0.7rem] sm:text-xs text-slate-400">
-      <span class="text-red-500 shrink-0">📍</span>
+      <span class="text-brand-orange shrink-0"><Icons name="map-pin" class="w-3.5 h-3.5" /></span>
       <span>West Mambalam, Chennai - 600 033, India</span>
     </div>
     
-    <!-- Phone & Email Direct Action Links -->
-    <div class="flex items-center justify-center gap-3 sm:gap-4 text-[0.75rem] sm:text-xs">
-      <a href="tel:+917010311971" class="text-white hover:text-red-400 flex items-center gap-1 font-bold transition-colors py-0.5">
-        <span class="text-red-500">📱</span>
+    <!-- Phone, WhatsApp & Email Direct Action Links -->
+    <div class="flex items-center justify-center flex-wrap gap-3 sm:gap-5 text-[0.75rem] sm:text-xs">
+      <a href="tel:+917010311971" class="text-white hover:text-brand-orange flex items-center gap-1.5 font-bold transition-colors py-0.5">
+        <span class="text-brand-orange"><Icons name="phone" class="w-3.5 h-3.5" /></span>
         <span>+91 70103 11971</span>
       </a>
       <span class="text-slate-700 hidden xs:inline">|</span>
-      <a href="mailto:ceo@aakkamcorp.com" class="text-slate-300 hover:text-white flex items-center gap-1 transition-colors py-0.5">
-        <span class="text-blue-400">✉️</span>
+      <a 
+        href="https://wa.me/917010311971?text=Hello%20Aakkam%20Corporate%20Solutions%2C%20I%20would%20like%20to%20connect%20regarding%20corporate%20advisory%20services."
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-emerald-400 hover:text-emerald-300 flex items-center gap-1.5 font-bold transition-colors py-0.5"
+      >
+        <span class="text-emerald-400"><Icons name="whatsapp" class="w-3.5 h-3.5" /></span>
+        <span>WhatsApp</span>
+      </a>
+      <span class="text-slate-700 hidden xs:inline">|</span>
+      <a href="mailto:ceo@aakkamcorp.com" class="text-slate-300 hover:text-brand-orange flex items-center gap-1.5 transition-colors py-0.5">
+        <span class="text-brand-orange"><Icons name="mail" class="w-3.5 h-3.5" /></span>
         <span class="hidden sm:inline">ceo@aakkamcorp.com</span>
         <span class="sm:hidden">Email</span>
       </a>
@@ -44,10 +56,10 @@ const navLinks = [
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center h-16 sm:h-20 gap-2">
       
-      <!-- Brand Logo: Fluid Size for Mobile to Desktop -->
+      <!-- Brand Logo: Krasis Clean Typography & Orange Accent -->
       <a href="/" class="flex flex-col group min-w-0 pr-2">
         <span class="text-base xs:text-lg sm:text-xl lg:text-2xl font-black tracking-tight text-slate-900 group-hover:text-slate-800 transition-colors truncate">
-          AAKKAM <span class="text-red-600">CORPORATE</span> SOLUTIONS
+          AAKKAM <span class="text-brand-orange">CORPORATE</span> SOLUTIONS
         </span>
         <span class="text-[0.6rem] sm:text-[0.7rem] uppercase tracking-wider font-semibold text-slate-500 -mt-0.5 sm:mt-0 truncate">
           Financial Consulting & Advisory Services
@@ -61,10 +73,10 @@ const navLinks = [
           return (
             <a
               href={link.href}
-              class={`px-3 lg:px-4 py-2 rounded-lg text-sm font-semibold transition-all ${
+              class={`px-3 lg:px-4 py-2 rounded-xl text-sm font-semibold transition-all ${
                 isActive
-                  ? 'bg-slate-900 text-white shadow-xs'
-                  : 'text-slate-700 hover:text-blue-600 hover:bg-slate-100'
+                  ? 'bg-orange-50 text-brand-orange font-bold border border-orange-200/80'
+                  : 'text-slate-700 hover:text-brand-orange hover:bg-slate-50'
               }`}
             >
               {link.label}
@@ -74,19 +86,20 @@ const navLinks = [
         <div class="pl-2 lg:pl-3">
           <a
             href="/contact"
-            class="inline-flex items-center justify-center px-4 py-2.5 text-xs lg:text-sm font-bold text-white bg-red-600 hover:bg-red-700 active:scale-[0.98] rounded-lg shadow-sm hover:shadow transition-all shrink-0"
+            class="inline-flex items-center justify-center gap-1.5 px-4 lg:px-5 py-2.5 text-xs lg:text-sm font-bold text-white bg-brand-orange hover:bg-brand-orangeHover active:scale-[0.98] rounded-xl shadow-md shadow-orange-500/20 transition-all shrink-0"
           >
-            Get Consultation →
+            <span>Reach Out</span>
+            <Icons name="chevron-right" class="w-3.5 h-3.5" />
           </a>
         </div>
       </nav>
 
-      <!-- Mobile Hamburger Button: Large Touch Target (44px min) -->
+      <!-- Mobile Hamburger Button -->
       <div class="md:hidden flex items-center shrink-0">
         <button
           id="mobile-menu-btn"
           type="button"
-          class="inline-flex items-center justify-center p-2.5 rounded-lg text-slate-700 hover:text-slate-900 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors"
+          class="inline-flex items-center justify-center p-2.5 rounded-xl text-slate-700 hover:text-slate-900 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-brand-orange transition-colors"
           aria-label="Toggle Navigation Menu"
           aria-expanded="false"
         >
@@ -104,7 +117,7 @@ const navLinks = [
     </div>
   </div>
 
-  <!-- Mobile Drawer Menu with Large Touch-Friendly Targets -->
+  <!-- Mobile Drawer Menu -->
   <div
     id="mobile-menu"
     class="hidden md:hidden border-t border-slate-200 bg-white px-4 pt-3 pb-6 space-y-1.5 shadow-xl transition-all"
@@ -115,29 +128,33 @@ const navLinks = [
       return (
         <a
           href={link.href}
-          class={`flex items-center justify-between px-4 py-3 rounded-lg text-base font-semibold transition-colors ${
+          class={`flex items-center justify-between px-4 py-3 rounded-xl text-base font-semibold transition-colors ${
             isActive
-              ? 'bg-slate-900 text-white'
-              : 'text-slate-800 hover:bg-slate-100 hover:text-blue-600'
+              ? 'bg-orange-50 text-brand-orange font-bold border border-orange-200/80'
+              : 'text-slate-800 hover:bg-slate-100 hover:text-brand-orange'
           }`}
         >
           <span>{link.label}</span>
-          <span class="text-xs opacity-60">→</span>
+          <Icons name="chevron-right" class="w-4 h-4 opacity-60" />
         </a>
       );
     })}
     <div class="pt-3 border-t border-slate-100 mt-2 space-y-2">
       <a
-        href="/contact"
-        class="block w-full text-center px-4 py-3 text-sm font-bold text-white bg-red-600 hover:bg-red-700 active:scale-[0.98] rounded-xl shadow transition-all"
+        href="https://wa.me/917010311971?text=Hello%20Aakkam%20Corporate%20Solutions%2C%20I%20would%20like%20to%20connect%20regarding%20corporate%20advisory%20services."
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex items-center justify-center gap-2 w-full text-center px-4 py-3 text-sm font-bold text-white bg-emerald-600 hover:bg-emerald-700 active:scale-[0.98] rounded-xl shadow transition-all"
       >
-        Request Advisory Consultation
+        <Icons name="whatsapp" class="w-4 h-4" />
+        <span>Chat on WhatsApp: +91 70103 11971</span>
       </a>
       <a
         href="tel:+917010311971"
-        class="flex items-center justify-center gap-2 w-full text-center px-4 py-3 text-sm font-bold text-slate-800 bg-slate-100 hover:bg-slate-200 rounded-xl transition-all"
+        class="flex items-center justify-center gap-2 w-full text-center px-4 py-3 text-sm font-bold text-slate-900 bg-orange-50 hover:bg-orange-100 border border-orange-200 rounded-xl transition-all"
       >
-        <span>📱 Tap to Call: +91 70103 11971</span>
+        <Icons name="phone" class="w-4 h-4 text-brand-orange" />
+        <span>Tap to Call: +91 70103 11971</span>
       </a>
     </div>
   </div>
