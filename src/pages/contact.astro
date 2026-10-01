@@ -1,0 +1,71 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Sidebar from '../components/Sidebar.astro';
+import ContactForm from '../components/ContactForm.astro';
+---
+
+<Layout
+  title="Contact Us | Aakkam Corporate Solutions — West Mambalam, Chennai"
+  description="Contact Aakkam Corporate Solutions in West Mambalam, Chennai. Reach our corporate finance leadership desk via mobile +91 70103 11971 or ceo@aakkamcorp.com."
+>
+
+  <!-- Hero Header -->
+  <div class="bg-gradient-to-r from-slate-950 via-slate-900 to-blue-950 text-white py-14 px-4 sm:px-6 lg:px-8 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto">
+      <span class="inline-block bg-red-600 text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-3">
+        Client Advisory Desk
+      </span>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
+        Connect With Our Advisory Desk
+      </h1>
+      <p class="text-slate-300 max-w-2xl mt-3 text-base sm:text-lg">
+        Initiate a confidential discussion with our senior partners regarding your enterprise capitalization or restructuring mandate.
+      </p>
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+      
+      <main class="lg:col-span-8 space-y-8">
+        
+        <!-- Contact Information Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
+          <div class="bg-white p-6 rounded-2xl border border-slate-200/90 shadow-sm">
+            <span class="text-2xl mb-2 block">📍</span>
+            <h4 class="font-bold text-slate-900 text-sm mb-1">Corporate Office</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              No:3, 2nd Floor, Swaminathan Street, West Mambalam, Chennai - 600 033, India
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-2xl border border-slate-200/90 shadow-sm">
+            <span class="text-2xl mb-2 block">📱</span>
+            <h4 class="font-bold text-slate-900 text-sm mb-1">Mobile Hotline</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Direct: <a href="tel:+917010311971" class="text-red-600 font-bold hover:underline">+91 70103 11971</a>
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-2xl border border-slate-200/90 shadow-sm">
+            <span class="text-2xl mb-2 block">✉️</span>
+            <h4 class="font-bold text-slate-900 text-sm mb-1">Executive Inquiries</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              <a href="mailto:ceo@aakkamcorp.com" class="text-blue-600 font-bold hover:underline">ceo@aakkamcorp.com</a>
+            </p>
+          </div>
+        </div>
+
+        <!-- Serverless Lead Capture Form Component -->
+        <ContactForm />
+
+      </main>
+
+      <div class="lg:col-span-4">
+        <Sidebar currentPath="/contact" />
+      </div>
+
+    </div>
+  </div>
+
+</Layout>

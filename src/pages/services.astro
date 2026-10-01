@@ -1,0 +1,137 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Sidebar from '../components/Sidebar.astro';
+
+const services = [
+  {
+    title: 'Fund Raising Solutions',
+    desc: 'Structure and access private capital, term loans, private equity placements, foreign currency convertible bonds (FCCBs), and future receivables securitization.',
+    href: '/resource',
+    icon: '💰',
+    bullets: ['Term Loans & Working Capital', 'Private Equity & Pre-IPO', 'Hybrid FCCBs', 'Asset-Backed Securitization']
+  },
+  {
+    title: 'Sick Industries Revival & Restructuring',
+    desc: 'Negotiate One Time Settlements (OTS) with consortium lenders, obtain BIFR/IBC relief packages, and design corporate turnaround structures.',
+    href: '/sick',
+    icon: '🔄',
+    bullets: ['One Time Settlement (OTS)', 'Debt-to-Equity Conversion', 'Moratorium Extension', 'Hiving Off Viable Units']
+  },
+  {
+    title: 'Project Preparation & Appraisal',
+    desc: 'Comprehensive feasibility studies, discounted cash flow valuation, NPV sensitivity models, and Detailed Project Reports (DPR).',
+    href: '/project',
+    icon: '📋',
+    bullets: ['Detailed Project Reports (DPR)', 'Discounted Cash Flows (DCF)', 'Bank Appraisal Modeling', 'Technical Feasibility']
+  },
+  {
+    title: 'Due Diligence Services',
+    desc: 'In-depth institutional business and legal due diligence for mergers, acquisitions, joint ventures, and private equity investments.',
+    href: '/due',
+    icon: '🔍',
+    bullets: ['Commercial & Market Verification', 'Legal & Governance Audit', 'Customer Reference Calls', 'IP & Litigation Review']
+  },
+  {
+    title: 'M & A Advisory Solutions',
+    desc: 'Corporate takeover strategies, target company valuation, tax-efficient transaction structuring, special committee advisory, and deal consummation.',
+    href: '/advisory',
+    icon: '🤝',
+    bullets: ['Target Sourcing & Valuation', 'Transaction Structuring', 'Deal Negotiation & Closing', 'Fair Opinions']
+  },
+  {
+    title: 'IPO Advisory Services',
+    desc: 'Public market readiness assessment, merchant banker and underwriter selection, DRHP and MD&A drafting, and post-listing compliance.',
+    href: '/ipo',
+    icon: '🔔',
+    bullets: ['Readiness & Governance Audits', 'Underwriter Selection', 'DRHP & MD&A Documentation', 'Post-Listing Compliance']
+  },
+  {
+    title: 'Venture Capital Funding',
+    desc: 'Early to growth-stage capital mobilization, institutional-grade pitch decks, unit-economics modeling, valuation, and term sheet covenants.',
+    href: '/venture',
+    icon: '🚀',
+    bullets: ['Seed & Series A Rounds', 'Financial Modeling & Decks', 'Valuation Benchmarking', 'Term Sheet Negotiation']
+  },
+  {
+    title: 'Corporate Tax Planning & Advisory',
+    desc: 'Direct and indirect corporate tax structuring, transaction tax optimization for M&A, transfer pricing, and revenue dispute resolution.',
+    href: '/tax',
+    icon: '📑',
+    bullets: ['Transaction Tax Optimization', 'Corporate Direct Tax Planning', 'Transfer Pricing & DTAA', 'Appellate Representation']
+  },
+];
+---
+
+<Layout
+  title="Advisory Services | Aakkam Corporate Solutions — Core Practice Areas"
+  description="Explore our end-to-end corporate finance advisory practices: Fund Raising, Turnaround & Restructuring, M&A Advisory, Project Appraisal, Due Diligence, and IPO Advisory."
+>
+
+  <!-- Hero Header -->
+  <div class="bg-gradient-to-r from-slate-950 via-slate-900 to-blue-950 text-white py-14 px-4 sm:px-6 lg:px-8 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto">
+      <span class="inline-block bg-red-600 text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-3">
+        Practice Areas
+      </span>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
+        Our Financial Advisory Services
+      </h1>
+      <p class="text-slate-300 max-w-2xl mt-3 text-base sm:text-lg">
+        Tailored institutional financial packages designed to solve complex capitalization, turnaround, and transaction mandates.
+      </p>
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+      
+      <main class="lg:col-span-8 space-y-6">
+        <div class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200/90 shadow-sm">
+          <h2 class="text-xl sm:text-2xl font-black text-slate-900 mb-2">Comprehensive Advisory Disciplines</h2>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            At Aakkam Corporate Solutions, we believe the best solution for clients lies in a blend of specialized financial disciplines provided from a single, reliable point of contact. Select any practice area below for detailed scopes of work:
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 gap-6">
+          {services.map((svc) => (
+            <div class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-md hover:border-blue-400 transition-all flex flex-col sm:flex-row gap-6 justify-between items-start group">
+              <div class="space-y-3 flex-1">
+                <div class="flex items-center gap-3">
+                  <span class="text-2xl">{svc.icon}</span>
+                  <h3 class="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                    <a href={svc.href}>{svc.title}</a>
+                  </h3>
+                </div>
+                <p class="text-sm text-slate-600 leading-relaxed text-justify">
+                  {svc.desc}
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-2">
+                  {svc.bullets.map((b) => (
+                    <span class="text-xs text-slate-700 flex items-center gap-1.5">
+                      <span class="text-red-600 font-bold">✓</span> {b}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div class="sm:self-center shrink-0">
+                <a
+                  href={svc.href}
+                  class="inline-flex items-center px-4 py-2.5 rounded-lg text-xs font-bold text-white bg-slate-900 hover:bg-blue-600 transition-colors"
+                >
+                  View Details →
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </main>
+
+      <div class="lg:col-span-4">
+        <Sidebar currentPath="/services" />
+      </div>
+
+    </div>
+  </div>
+
+</Layout>

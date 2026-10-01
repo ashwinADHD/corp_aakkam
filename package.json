@@ -1,0 +1,18 @@
+{
+  "name": "corp-aakkam",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Aakkam Corporate Solutions — Modern Financial Consulting & Advisory",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^4.3.14",
+    "@astrojs/tailwind": "^6.0.2",
+    "astro": "^5.18.2",
+    "tailwindcss": "^3.4.17"
+  }
+}

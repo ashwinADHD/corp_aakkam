@@ -1,0 +1,86 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  canonicalUrl?: string;
+  image?: string;
+}
+
+const {
+  title,
+  description,
+  canonicalUrl = Astro.url.href,
+  image = '/style/banner_2.png',
+} = Astro.props;
+
+const currentPath = Astro.url.pathname;
+
+const schemaData = {
+  '@context': 'https://schema.org',
+  '@type': 'FinancialService',
+  name: 'Aakkam Corporate Solutions',
+  alternateName: 'Aakkam Corp',
+  url: Astro.site ? Astro.site.toString() : 'https://corp-aakkam.com',
+  logo: 'https://corp-aakkam.com/style/banner_2.png',
+  image: 'https://corp-aakkam.com/style/banner_2.png',
+  description: description,
+  telephone: '+91-70103-11971',
+  email: 'ceo@aakkamcorp.com',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'No:3, 2nd Floor, Swaminathan Street, West Mambalam',
+    addressLocality: 'Chennai',
+    addressRegion: 'Tamil Nadu',
+    postalCode: '600033',
+    addressCountry: 'IN',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: '13.0335',
+    longitude: '80.2223',
+  },
+  areaServed: 'IN',
+};
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:site_name" content="Aakkam Corporate Solutions" />
+    <meta property="og:locale" content="en_IN" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalUrl} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+  </head>
+  <body class="min-h-screen flex flex-col bg-slate-50 text-slate-800 selection:bg-red-500 selection:text-white">
+    <Header currentPath={currentPath} />
+    <div class="flex-grow">
+      <slot />
+    </div>
+    <Footer />
+  </body>
+</html>

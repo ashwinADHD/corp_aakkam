@@ -1,0 +1,231 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Sidebar from '../components/Sidebar.astro';
+import ContactForm from '../components/ContactForm.astro';
+
+const services = [
+  {
+    title: 'Fund Raising Solutions',
+    desc: 'Access institutional private capital, term loans, equity private placements, hybrid FCCBs, and future receivables securitization.',
+    href: '/resource',
+    icon: '💰',
+  },
+  {
+    title: 'Sick Industries Revival',
+    desc: 'Strategic One Time Settlement (OTS) negotiations, BIFR/IBC relief packages, debt conversion, and operational business restructuring.',
+    href: '/sick',
+    icon: '🔄',
+  },
+  {
+    title: 'Project Preparation & Appraisal',
+    desc: 'Comprehensive feasibility studies, discounted cash flow valuation, NPV optimization, and Detailed Project Reports (DPR).',
+    href: '/project',
+    icon: '📋',
+  },
+  {
+    title: 'Due Diligence',
+    desc: 'Rigorous forensic business and legal due diligence verifying commercial realities, patent integrity, and contingent liabilities.',
+    href: '/due',
+    icon: '🔍',
+  },
+  {
+    title: 'M & A Advisory Solutions',
+    desc: 'Corporate takeover strategies, target company valuation, tax-efficient structuring, fair opinions, and deal consummation.',
+    href: '/advisory',
+    icon: '🤝',
+  },
+  {
+    title: 'IPO Advisory Services',
+    desc: 'Public market readiness audits, merchant banker selection, DRHP/MD&A drafting, and post-listing investor relations.',
+    href: '/ipo',
+    icon: '🔔',
+  },
+  {
+    title: 'Venture Capital Funding',
+    desc: 'Early to growth-stage capital mobilization, financial modeling, valuation benchmarking, and VC term sheet negotiations.',
+    href: '/venture',
+    icon: '🚀',
+  },
+  {
+    title: 'Corporate Tax Planning',
+    desc: 'Direct and indirect tax structuring for M&A, cross-border transfer pricing, and statutory dispute resolution.',
+    href: '/tax',
+    icon: '📑',
+  },
+];
+---
+
+<Layout
+  title="Aakkam Corporate Solutions | Financial Consulting & Advisory Services — Chennai, India"
+  description="Premier financial consulting and corporate advisory firm in Chennai, India. Specializing in capital fund raising, M&A, IPO advisory, and sick unit debt restructuring."
+>
+
+  <!-- Hero Section with Tailwind UI Styling & Skyline Banner -->
+  <section class="relative bg-gradient-to-br from-slate-950 via-slate-900 to-blue-950 text-white overflow-hidden py-20 lg:py-28 px-4 sm:px-6 lg:px-8 border-b border-slate-800">
+    <div class="absolute inset-0 opacity-15 bg-cover bg-center pointer-events-none" style="background-image: url('/style/banner_2.png');"></div>
+    <div class="relative max-w-7xl mx-auto">
+      <div class="max-w-3xl">
+        <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold tracking-wide uppercase bg-red-600/90 text-white mb-6">
+          <span>🛡️</span> Institutional Corporate Finance Desk
+        </span>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-tight">
+          Strategic Capital Mobilization & Corporate Restructuring
+        </h1>
+        <p class="mt-6 text-lg sm:text-xl text-slate-300 leading-relaxed">
+          Maximizing enterprise value through innovative, transparent, and need-based financial solutions. Partnering with institutional investors, banks, and corporate boards across India.
+        </p>
+
+        <!-- CTA Action Buttons -->
+        <div class="mt-10 flex flex-wrap gap-4 items-center">
+          <a
+            href="/contact"
+            class="px-7 py-4 rounded-xl text-base font-bold text-white bg-red-600 hover:bg-red-700 active:scale-[0.98] shadow-lg shadow-red-600/30 transition-all"
+          >
+            Initiate Advisory Consultation →
+          </a>
+          <a
+            href="/services"
+            class="px-7 py-4 rounded-xl text-base font-bold text-white bg-white/10 hover:bg-white/15 backdrop-blur-sm border border-white/20 transition-all"
+          >
+            Explore Core Practices
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Badges & Metrics Bar -->
+  <section class="bg-white border-b border-slate-200/80 py-8 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
+        <div class="text-2xl sm:text-3xl font-black text-slate-900">8+</div>
+        <div class="text-xs text-slate-500 font-semibold uppercase tracking-wider mt-1">Specialized Practices</div>
+      </div>
+      <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
+        <div class="text-2xl sm:text-3xl font-black text-red-600">100%</div>
+        <div class="text-xs text-slate-500 font-semibold uppercase tracking-wider mt-1">Confidential & Compliant</div>
+      </div>
+      <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
+        <div class="text-2xl sm:text-3xl font-black text-blue-600">End-to-End</div>
+        <div class="text-xs text-slate-500 font-semibold uppercase tracking-wider mt-1">Transaction Execution</div>
+      </div>
+      <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
+        <div class="text-2xl sm:text-3xl font-black text-slate-900">Chennai, IN</div>
+        <div class="text-xs text-slate-500 font-semibold uppercase tracking-wider mt-1">Headquartered Desk</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content & Sidebar Layout -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+      
+      <!-- Primary Column -->
+      <main class="lg:col-span-8 space-y-12">
+        
+        <!-- Corporate Intro -->
+        <section class="bg-white p-8 sm:p-10 rounded-2xl border border-slate-200/90 shadow-sm space-y-6">
+          <div>
+            <span class="text-xs font-bold text-red-600 uppercase tracking-widest block mb-1">Company Overview</span>
+            <h2 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">Who We Are</h2>
+          </div>
+
+          <p class="text-base text-slate-700 leading-relaxed text-justify">
+            <strong>Aakkam Corporate Solutions</strong> is a premier financial consulting and advisory firm founded with the vision to create one of the industry's most efficient financial and advisory services hubs, powered by qualitative human interfacing technology.
+          </p>
+
+          <p class="text-base text-slate-700 leading-relaxed text-justify">
+            The mission of the company is maximizing client satisfaction through innovative, transparent, and need-based solutions. Aakkam is dedicated to providing top-notch financial solutions packages to its clients to help them achieve and sustain competitive advantage in their respective industries.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+            <div class="p-5 rounded-xl bg-blue-50/70 border border-blue-100">
+              <h4 class="font-bold text-slate-900 text-sm mb-1">Optimized Capital Mobilization</h4>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                Years of business evaluation enable us to optimally mobilize debt and equity resources for corporate and institutional mandates.
+              </p>
+            </div>
+            <div class="p-5 rounded-xl bg-slate-50 border border-slate-200">
+              <h4 class="font-bold text-slate-900 text-sm mb-1">High-Yield Deployment</h4>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                We facilitate the profitable deployment of institutional and private capital into sustainable, high-growth Indian enterprises.
+              </p>
+            </div>
+          </div>
+
+          <p class="text-base text-slate-700 leading-relaxed text-justify">
+            Our people are intensely—and perpetually—client-focused. Clients in turn appreciate our deep regulatory knowledge, unyielding integrity, teamwork, and superior quality of execution.
+          </p>
+        </section>
+
+        <!-- Services Breakdown Grid -->
+        <section class="space-y-6">
+          <div class="flex items-center justify-between">
+            <div>
+              <span class="text-xs font-bold text-blue-600 uppercase tracking-widest block mb-1">Practice Areas</span>
+              <h2 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">Core Financial Advisory Services</h2>
+            </div>
+            <a href="/services" class="hidden sm:inline-block text-sm font-bold text-red-600 hover:text-red-700">
+              View All Services →
+            </a>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            {services.map((svc) => (
+              <div class="bg-white p-6 rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-md hover:border-blue-400 transition-all flex flex-col justify-between group">
+                <div>
+                  <div class="text-3xl mb-3">{svc.icon}</div>
+                  <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2">
+                    <a href={svc.href}>{svc.title}</a>
+                  </h3>
+                  <p class="text-xs text-slate-600 leading-relaxed">
+                    {svc.desc}
+                  </p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
+                  <a href={svc.href} class="text-xs font-bold text-red-600 hover:text-red-700">
+                    Explore Details →
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <!-- Quote Callouts -->
+        <section class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <blockquote class="bg-gradient-to-br from-blue-900 to-slate-900 text-white p-6 rounded-2xl shadow-sm">
+            <p class="text-sm italic leading-relaxed text-blue-100">
+              “Well Begun is half Done.”
+            </p>
+            <footer class="mt-4 text-xs font-bold text-red-400 uppercase tracking-wider">
+              — Aristotle
+            </footer>
+          </blockquote>
+
+          <blockquote class="bg-gradient-to-br from-slate-900 to-slate-950 text-white p-6 rounded-2xl shadow-sm">
+            <p class="text-sm italic leading-relaxed text-slate-200">
+              “Whenever you see a successful business, someone once made a courageous decision.”
+            </p>
+            <footer class="mt-4 text-xs font-bold text-red-400 uppercase tracking-wider">
+              — Peter F. Drucker
+            </footer>
+          </blockquote>
+        </section>
+
+        <!-- Lead Capture Form Component -->
+        <section>
+          <ContactForm />
+        </section>
+
+      </main>
+
+      <!-- Sticky Sidebar -->
+      <div class="lg:col-span-4">
+        <Sidebar currentPath="/" />
+      </div>
+
+    </div>
+  </div>
+
+</Layout>

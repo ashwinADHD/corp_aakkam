@@ -1,0 +1,179 @@
+---
+interface Props {
+  accessKey?: string;
+}
+
+// Default to Web3Forms public demo/free access key or fallback
+const { accessKey = 'YOUR_ACCESS_KEY_HERE' } = Astro.props;
+---
+
+<div class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200/90 shadow-sm">
+  <div class="mb-6">
+    <h3 class="text-xl font-bold text-slate-900 tracking-tight">Initiate Confidential Advisory Inquiry</h3>
+    <p class="text-sm text-slate-500 mt-1">
+      Submit your corporate requirement. Our leadership desk evaluates all inquiries with utmost discretion.
+    </p>
+  </div>
+
+  <form id="lead-contact-form" action="https://api.web3forms.com/submit" method="POST" class="space-y-5">
+    
+    <!-- Web3Forms Config Settings -->
+    <input type="hidden" name="access_key" value={accessKey} />
+    <input type="hidden" name="subject" value="New Advisory Request — Aakkam Corporate Solutions" />
+    <input type="hidden" name="from_name" value="Aakkam Corporate Solutions Portal" />
+    <input type="checkbox" name="botcheck" class="hidden" style="display: none;" />
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+      <!-- Full Name -->
+      <div>
+        <label for="name" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+          Full Name / Authorized Signatory *
+        </label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          required
+          placeholder="e.g. Anand R."
+          class="w-full px-4 py-2.5 rounded-lg border border-slate-300 text-slate-900 text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all outline-none"
+        />
+      </div>
+
+      <!-- Corporate Email -->
+      <div>
+        <label for="email" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+          Corporate Email Address *
+        </label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          required
+          placeholder="e.g. anand@company.com"
+          class="w-full px-4 py-2.5 rounded-lg border border-slate-300 text-slate-900 text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all outline-none"
+        />
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+      <!-- Phone / Mobile -->
+      <div>
+        <label for="phone" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+          Direct Phone / Mobile *
+        </label>
+        <input
+          type="tel"
+          name="phone"
+          id="phone"
+          required
+          placeholder="+91 98..."
+          class="w-full px-4 py-2.5 rounded-lg border border-slate-300 text-slate-900 text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all outline-none"
+        />
+      </div>
+
+      <!-- Advisory Practice Requirement -->
+      <div>
+        <label for="service_interest" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+          Primary Practice of Interest
+        </label>
+        <select
+          name="service_interest"
+          id="service_interest"
+          class="w-full px-4 py-2.5 rounded-lg border border-slate-300 text-slate-900 text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all outline-none bg-white"
+        >
+          <option value="Fund Raising">Fund Raising Solutions</option>
+          <option value="Sick Industries Revival">Sick Industries Revival & Restructuring</option>
+          <option value="Project Appraisal">Project Preparation & Appraisal (DPR)</option>
+          <option value="Due Diligence">Due Diligence (M&A / PE)</option>
+          <option value="M&A Advisory">M & A Advisory & Takeovers</option>
+          <option value="IPO Advisory">IPO Advisory Services</option>
+          <option value="Venture Capital">Venture Capital Funding</option>
+          <option value="Tax Planning">Corporate Tax Planning</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Project Brief -->
+    <div>
+      <label for="message" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+        Mandate Overview / Brief *
+      </label>
+      <textarea
+        name="message"
+        id="message"
+        rows="4"
+        required
+        placeholder="Please summarize your capital requirement, asset restructuring context, or acquisition timeline..."
+        class="w-full px-4 py-2.5 rounded-lg border border-slate-300 text-slate-900 text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all outline-none"
+      ></textarea>
+    </div>
+
+    <!-- Submit Button & Feedback Status -->
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">
+      <button
+        type="submit"
+        id="submit-btn"
+        class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 rounded-lg text-sm font-bold text-white bg-red-600 hover:bg-red-700 active:scale-[0.98] shadow-sm hover:shadow transition-all"
+      >
+        <span>Submit Advisory Mandate →</span>
+      </button>
+
+      <span id="form-result" class="text-xs font-medium text-slate-500 text-center sm:text-right"></span>
+    </div>
+
+  </form>
+</div>
+
+<script>
+  const form = document.getElementById('lead-contact-form') as HTMLFormElement;
+  const result = document.getElementById('form-result');
+  const submitBtn = document.getElementById('submit-btn');
+
+  if (form && result && submitBtn) {
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      
+      const formData = new FormData(form);
+      const accessKey = formData.get('access_key');
+
+      // If access key not configured, fallback gracefully to mailto
+      if (accessKey === 'YOUR_ACCESS_KEY_HERE') {
+        const name = formData.get('name') || '';
+        const email = formData.get('email') || '';
+        const phone = formData.get('phone') || '';
+        const svc = formData.get('service_interest') || '';
+        const msg = formData.get('message') || '';
+
+        const mailtoSubject = encodeURIComponent(`Advisory Mandate Inquiry: ${svc} (${name})`);
+        const mailtoBody = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nPractice: ${svc}\n\nBrief:\n${msg}`);
+
+        result.innerHTML = '<span class="text-blue-600">Opening email dispatch to ceo@aakkamcorp.com...</span>';
+        window.location.href = `mailto:ceo@aakkamcorp.com?subject=${mailtoSubject}&body=${mailtoBody}`;
+        return;
+      }
+
+      submitBtn.setAttribute('disabled', 'true');
+      result.innerHTML = '<span class="text-slate-500">Transmitting confidential inquiry...</span>';
+
+      try {
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: formData
+        });
+        const data = await response.json();
+
+        if (response.status === 200) {
+          result.innerHTML = '<span class="text-green-600 font-bold">✓ Mandate submitted successfully. Our desk will contact you within 24 hours.</span>';
+          form.reset();
+        } else {
+          result.innerHTML = `<span class="text-red-500">${data.message || 'Submission failed. Please email ceo@aakkamcorp.com'}</span>`;
+        }
+      } catch (error) {
+        result.innerHTML = '<span class="text-red-500">Network error. Dispatching via direct email...</span>';
+        window.location.href = `mailto:ceo@aakkamcorp.com?subject=Inquiry&body=Please contact me`;
+      } finally {
+        submitBtn.removeAttribute('disabled');
+      }
+    });
+  }
+</script>

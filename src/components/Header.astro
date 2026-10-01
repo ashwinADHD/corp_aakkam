@@ -1,0 +1,135 @@
+---
+interface Props {
+  currentPath?: string;
+}
+
+const { currentPath = '/' } = Astro.props;
+
+const navLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/about', label: 'About Us' },
+  { href: '/services', label: 'Services' },
+  { href: '/case-studies', label: 'Case Studies' },
+  { href: '/contact', label: 'Contact Us' },
+];
+---
+
+<!-- Top Contact Bar -->
+<div class="bg-slate-900 text-slate-300 text-xs py-2 px-4 border-b border-slate-800">
+  <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+    <div class="flex items-center gap-2">
+      <span class="text-red-500">📍</span>
+      <span>No:3, 2nd Floor, Swaminathan Street, West Mambalam, Chennai - 600 033, India</span>
+    </div>
+    <div class="flex items-center gap-4">
+      <a href="tel:+917010311971" class="hover:text-white flex items-center gap-1 transition-colors">
+        <span class="text-red-500">📱</span>
+        <span class="font-semibold">+91 70103 11971</span>
+      </a>
+      <span class="text-slate-600">|</span>
+      <a href="mailto:ceo@aakkamcorp.com" class="hover:text-white flex items-center gap-1 transition-colors">
+        <span class="text-blue-400">✉️</span>
+        <span>ceo@aakkamcorp.com</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Main Sticky Header -->
+<header class="bg-white/95 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200/80 shadow-sm transition-all">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-20">
+      
+      <!-- Brand Logo -->
+      <a href="/" class="flex flex-col group">
+        <span class="text-2xl font-extrabold tracking-tight text-slate-900 group-hover:text-slate-800 transition-colors">
+          AAKKAM <span class="text-red-600">CORPORATE</span> SOLUTIONS
+        </span>
+        <span class="text-[0.7rem] uppercase tracking-wider font-semibold text-slate-500 mt-0.5">
+          Financial Consulting & Advisory Services
+        </span>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="hidden md:flex items-center space-x-1" aria-label="Desktop Navigation">
+        {navLinks.map((link) => {
+          const isActive = currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href));
+          return (
+            <a
+              href={link.href}
+              class={`px-4 py-2 rounded-lg text-sm font-semibold transition-all ${
+                isActive
+                  ? 'bg-slate-900 text-white shadow-sm'
+                  : 'text-slate-700 hover:text-blue-600 hover:bg-slate-100'
+              }`}
+            >
+              {link.label}
+            </a>
+          );
+        })}
+        <div class="pl-3">
+          <a
+            href="/contact"
+            class="inline-flex items-center justify-center px-4 py-2.5 text-sm font-bold text-white bg-red-600 hover:bg-red-700 rounded-lg shadow-sm hover:shadow transition-all"
+          >
+            Get Consultation →
+          </a>
+        </div>
+      </nav>
+
+      <!-- Mobile Hamburger Button -->
+      <div class="md:hidden flex items-center">
+        <button
+          id="mobile-menu-btn"
+          type="button"
+          class="p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          aria-label="Toggle Navigation Menu"
+          aria-expanded="false"
+        >
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Mobile Drawer Menu -->
+  <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 bg-white px-4 pt-3 pb-6 space-y-2 shadow-xl">
+    {navLinks.map((link) => {
+      const isActive = currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href));
+      return (
+        <a
+          href={link.href}
+          class={`block px-3 py-2.5 rounded-md text-base font-semibold transition-colors ${
+            isActive
+              ? 'bg-slate-900 text-white'
+              : 'text-slate-800 hover:bg-slate-100 hover:text-blue-600'
+          }`}
+        >
+          {link.label}
+        </a>
+      );
+    })}
+    <div class="pt-2">
+      <a
+        href="/contact"
+        class="block w-full text-center px-4 py-3 text-sm font-bold text-white bg-red-600 hover:bg-red-700 rounded-lg shadow"
+      >
+        Request Advisory Consultation
+      </a>
+    </div>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  if (btn && menu) {
+    btn.addEventListener('click', () => {
+      const isHidden = menu.classList.toggle('hidden');
+      btn.setAttribute('aria-expanded', (!isHidden).toString());
+    });
+  }
+</script>
