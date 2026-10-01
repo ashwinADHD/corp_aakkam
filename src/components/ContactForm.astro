@@ -3,19 +3,18 @@ interface Props {
   accessKey?: string;
 }
 
-// Default to Web3Forms public demo/free access key or fallback
 const { accessKey = 'YOUR_ACCESS_KEY_HERE' } = Astro.props;
 ---
 
-<div class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200/90 shadow-sm">
+<div class="bg-white p-5 sm:p-8 rounded-2xl border border-slate-200/90 shadow-xs sm:shadow-sm">
   <div class="mb-6">
-    <h3 class="text-xl font-bold text-slate-900 tracking-tight">Initiate Confidential Advisory Inquiry</h3>
-    <p class="text-sm text-slate-500 mt-1">
-      Submit your corporate requirement. Our leadership desk evaluates all inquiries with utmost discretion.
+    <h3 class="text-lg sm:text-xl font-bold text-slate-900 tracking-tight">Initiate Confidential Advisory Inquiry</h3>
+    <p class="text-xs sm:text-sm text-slate-500 mt-1">
+      Submit your corporate mandate. Our leadership desk evaluates all inquiries with strict discretion.
     </p>
   </div>
 
-  <form id="lead-contact-form" action="https://api.web3forms.com/submit" method="POST" class="space-y-5">
+  <form id="lead-contact-form" action="https://api.web3forms.com/submit" method="POST" class="space-y-4 sm:space-y-5">
     
     <!-- Web3Forms Config Settings -->
     <input type="hidden" name="access_key" value={accessKey} />
@@ -23,11 +22,11 @@ const { accessKey = 'YOUR_ACCESS_KEY_HERE' } = Astro.props;
     <input type="hidden" name="from_name" value="Aakkam Corporate Solutions Portal" />
     <input type="checkbox" name="botcheck" class="hidden" style="display: none;" />
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
       <!-- Full Name -->
       <div>
         <label for="name" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
-          Full Name / Authorized Signatory *
+          Full Name / Organization *
         </label>
         <input
           type="text"
@@ -35,7 +34,7 @@ const { accessKey = 'YOUR_ACCESS_KEY_HERE' } = Astro.props;
           id="name"
           required
           placeholder="e.g. Anand R."
-          class="w-full px-4 py-2.5 rounded-lg border border-slate-300 text-slate-900 text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all outline-none"
+          class="w-full px-3.5 py-3 rounded-xl border border-slate-300 text-slate-900 text-base sm:text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all outline-none"
         />
       </div>
 
@@ -50,12 +49,12 @@ const { accessKey = 'YOUR_ACCESS_KEY_HERE' } = Astro.props;
           id="email"
           required
           placeholder="e.g. anand@company.com"
-          class="w-full px-4 py-2.5 rounded-lg border border-slate-300 text-slate-900 text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all outline-none"
+          class="w-full px-3.5 py-3 rounded-xl border border-slate-300 text-slate-900 text-base sm:text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all outline-none"
         />
       </div>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
       <!-- Phone / Mobile -->
       <div>
         <label for="phone" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
@@ -67,7 +66,7 @@ const { accessKey = 'YOUR_ACCESS_KEY_HERE' } = Astro.props;
           id="phone"
           required
           placeholder="+91 98..."
-          class="w-full px-4 py-2.5 rounded-lg border border-slate-300 text-slate-900 text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all outline-none"
+          class="w-full px-3.5 py-3 rounded-xl border border-slate-300 text-slate-900 text-base sm:text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all outline-none"
         />
       </div>
 
@@ -79,7 +78,7 @@ const { accessKey = 'YOUR_ACCESS_KEY_HERE' } = Astro.props;
         <select
           name="service_interest"
           id="service_interest"
-          class="w-full px-4 py-2.5 rounded-lg border border-slate-300 text-slate-900 text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all outline-none bg-white"
+          class="w-full px-3.5 py-3 rounded-xl border border-slate-300 text-slate-900 text-base sm:text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all outline-none bg-white"
         >
           <option value="Fund Raising">Fund Raising Solutions</option>
           <option value="Sick Industries Revival">Sick Industries Revival & Restructuring</option>
@@ -104,7 +103,7 @@ const { accessKey = 'YOUR_ACCESS_KEY_HERE' } = Astro.props;
         rows="4"
         required
         placeholder="Please summarize your capital requirement, asset restructuring context, or acquisition timeline..."
-        class="w-full px-4 py-2.5 rounded-lg border border-slate-300 text-slate-900 text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all outline-none"
+        class="w-full px-3.5 py-3 rounded-xl border border-slate-300 text-slate-900 text-base sm:text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all outline-none"
       ></textarea>
     </div>
 
@@ -113,7 +112,7 @@ const { accessKey = 'YOUR_ACCESS_KEY_HERE' } = Astro.props;
       <button
         type="submit"
         id="submit-btn"
-        class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 rounded-lg text-sm font-bold text-white bg-red-600 hover:bg-red-700 active:scale-[0.98] shadow-sm hover:shadow transition-all"
+        class="w-full sm:w-auto inline-flex items-center justify-center px-7 py-3.5 rounded-xl text-sm font-bold text-white bg-red-600 hover:bg-red-700 active:scale-[0.98] shadow-sm hover:shadow transition-all"
       >
         <span>Submit Advisory Mandate →</span>
       </button>
@@ -136,7 +135,7 @@ const { accessKey = 'YOUR_ACCESS_KEY_HERE' } = Astro.props;
       const formData = new FormData(form);
       const accessKey = formData.get('access_key');
 
-      // If access key not configured, fallback gracefully to mailto
+      // Fallback gracefully to mailto if access key not provided
       if (accessKey === 'YOUR_ACCESS_KEY_HERE') {
         const name = formData.get('name') || '';
         const email = formData.get('email') || '';
@@ -147,7 +146,7 @@ const { accessKey = 'YOUR_ACCESS_KEY_HERE' } = Astro.props;
         const mailtoSubject = encodeURIComponent(`Advisory Mandate Inquiry: ${svc} (${name})`);
         const mailtoBody = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nPractice: ${svc}\n\nBrief:\n${msg}`);
 
-        result.innerHTML = '<span class="text-blue-600">Opening email dispatch to ceo@aakkamcorp.com...</span>';
+        result.innerHTML = '<span class="text-blue-600">Opening email client to dispatch to ceo@aakkamcorp.com...</span>';
         window.location.href = `mailto:ceo@aakkamcorp.com?subject=${mailtoSubject}&body=${mailtoBody}`;
         return;
       }
